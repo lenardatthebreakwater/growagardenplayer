@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-// NOTE: Using functional placeholders for shadcn/ui components
 const Card = ({ children, className }) => <div className={`bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md ${className}`}>{children}</div>;
 const Badge = ({ children, variant = 'default', className }) => {
   let colorClasses = 'bg-green-100 text-green-700';
@@ -10,33 +9,30 @@ const Badge = ({ children, variant = 'default', className }) => {
 };
 const Separator = ({ className }) => <div className={`bg-gray-200 h-px ${className}`} />;
 
-// --- Article Data for SEO and JSON-LD ---
 const articleData = {
-  slug: "pets-that-spread-plant-mutations",
-  title: "Grow a Garden – Pets That Spread Plant Mutations",
-  description: "A comprehensive guide to the best Grow a Garden pets like the T-Rex, Corrupted Kitsune, and Phoenix that specialize in spreading high-value fruit mutations.",
-  datePublished: "2025-12-12T10:00:00Z", // New unique time
+  slug: "grow-a-garden-pets-that-spread-mutations",
+  title: "Grow a Garden Pets That Spread Mutations",
+  description: "A comprehensive list of Grow a Garden pets like the T-Rex, Corrupted Kitsune, and Phoenix that specialize in spreading mutations.",
+  datePublished: "2025-12-12T10:00:00Z",
   dateModified: "2025-12-12T10:00:00Z",
-  authorName: "GardenHub Contributor",
-  image: "/images/mutation-pets-header.jpg", // New header image
+  authorName: "Lenard Esplana Perilla",
+  image: "/images/mutation-pets-header.jpg",
   category: "Guides",
 };
 
-// Helper to format date for display
 const formatDate = (dateString) => {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString('en-US', options);
 };
 
-// --- SEO Metadata ---
 export const metadata = {
   title: articleData.title,
   description: articleData.description,
-  keywords: ['Grow a Garden Mutation Pets', 'T-Rex', 'Corrupted Kitsune', 'Griffin', 'Phoenix', 'Fruit Mutations'],
+  keywords: ['grow a garden pets that spread mutations'],
   openGraph: {
     title: articleData.title,
     description: articleData.description,
-    url: `https://www.yourdomain.com/articles/${articleData.slug}`,
+    url: `https://www.growagardenplayer.com/posts/${articleData.slug}`,
     type: 'article',
     publishedTime: articleData.datePublished,
     modifiedTime: articleData.dateModified,
@@ -44,13 +40,12 @@ export const metadata = {
   },
 };
 
-// --- JSON-LD Structured Data for Article ---
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: articleData.title,
   description: articleData.description,
-  image: `https://www.yourdomain.com${articleData.image}`,
+  image: `https://www.growagardenplayer.com${articleData.image}`,
   datePublished: articleData.datePublished,
   dateModified: articleData.dateModified,
   author: {
@@ -59,19 +54,18 @@ const jsonLd = {
   },
   publisher: {
     '@type': 'Organization',
-    name: 'GardenHub',
+    name: 'Grow a Garden Player',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.yourdomain.com/logo.png',
+      url: 'https://www.growagardenplayer.com/logo.png',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': `https://www.yourdomain.com/articles/${articleData.slug}`,
+    '@id': `https://www.growagardenplayer.com/posts/${articleData.slug}`,
   },
 };
 
-// --- Image Component Helper ---
 const ArticleImage = ({ src, alt, caption }) => (
     <figure className="my-8 rounded-lg overflow-hidden shadow-lg border border-gray-100">
         <img 
@@ -89,17 +83,14 @@ const ArticleImage = ({ src, alt, caption }) => (
     </figure>
 );
 
-// --- Main Article Page Component ---
 export default function MutationArticlePage() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* JSON-LD Script */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Header (Simplified) */}
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
@@ -107,19 +98,16 @@ export default function MutationArticlePage() {
               🌱
             </div>
             <p className="text-xl font-extrabold text-[#2B5E3A]">
-              Garden<span className="text-gray-800 font-semibold">Hub</span>
+              Grow a Garden Player
             </p>
           </Link>
         </div>
       </header>
 
-      {/* Main Content (Semantic) */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         
-        {/* Article Metadata Section */}
         <section className="mb-8">
             <Badge variant="guides" className="mb-3">{articleData.category}</Badge>
-            {/* Semantic H1 */}
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[#2B5E3A] mb-4 tracking-tight">
                 {articleData.title}
             </h1>
@@ -130,11 +118,10 @@ export default function MutationArticlePage() {
             </div>
         </section>
 
-        {/* Article Body */}
         <article className="prose max-w-none text-gray-800">
             
             <p className="lead text-xl">
-                Some pets in *Grow a Garden* specialize in spreading **mutations** that boost fruit value and garden efficiency. This guide explains what each mutation-spreading pet does and why they’re useful.
+                Some pets in *Grow a Garden* specialize in spreading mutations that boost fruit value and garden efficiency. This guide explains what each mutation-spreading pet does and why they’re useful.
             </p>
             <p className="text-sm italic text-gray-600 mb-8">
                 (Assumes each pet is Age 1, 1kg, and has no pet mutation.)
@@ -142,7 +129,6 @@ export default function MutationArticlePage() {
 
             <Separator className="my-10" />
 
-            {/* PET 1: T-Rex */}
             <h2 id="t-rex" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">1. T-Rex 🦖</h2>
             
             <ArticleImage 
@@ -153,7 +139,7 @@ export default function MutationArticlePage() {
             
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **20:11**, the T-Rex consumes a random mutation from your garden, then roars to spread that same mutation to **3.20 random fruits**.</li>
+                <li>Every 20:11, the T-Rex consumes a random mutation from your garden, then roars to spread that same mutation to 3.20 random fruits.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -161,7 +147,6 @@ export default function MutationArticlePage() {
                 Once you get a valuable mutation, the T-Rex can rapidly clone it around the garden.
             </p>
 
-            {/* PET 2: Kappa */}
             <h2 id="kappa" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Kappa 💧</h2>
 
             <ArticleImage 
@@ -172,8 +157,8 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **8:30**, the Kappa sprays water on all fruits within 20.25 studs, applying **Wet**.</li>
-                <li>There is also a **10.10% chance** for existing Wet mutations to be upgraded to **Bloodlit (x5 multiplier)**.</li>
+                <li>Every 8:30, the Kappa sprays water on all fruits within 20.25 studs, applying Wet.</li>
+                <li>There is also a 10.10% chance for existing Wet mutations to be upgraded to Bloodlit (x5 multiplier).</li>
             </ul>
             
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -181,7 +166,6 @@ export default function MutationArticlePage() {
                 Consistent AoE mutation spreading with a chance for a big multiplier upgrade.
             </p>
 
-            {/* PET 3: Corrupted Kitsune */}
             <h2 id="corrupted-kitsune" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Corrupted Kitsune 🔮</h2>
 
             <ArticleImage 
@@ -192,8 +176,8 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **20:56**, it fires cursed energy at **9 fruits**.</li>
-                <li>Each fruit has a **20.20% chance** to gain **Corrupt Chakra** and a very rare chance to gain **Corrupt Foxfire Chakra**.</li>
+                <li>Every 20:56, it fires cursed energy at 9 fruits.</li>
+                <li>Each fruit has a 20.20% chance to gain Corrupt Chakra and a very rare chance to gain Corrupt Foxfire Chakra.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -201,7 +185,6 @@ export default function MutationArticlePage() {
                 One of the strongest mutation pets, capable of applying extremely high multipliers (up to x90).
             </p>
             
-            {/* PET 4: Griffin */}
             <h2 id="griffin" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Griffin 🦅</h2>
 
             <ArticleImage 
@@ -212,9 +195,9 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **15:32**, the Griffin creates a cyclone.</li>
-                <li>Pets hit get **66.00s cooldown reduction**.</li>
-                <li>Fruits hit have a **10.15% chance** to receive **Cyclonic (x50 multiplier)**.</li>
+                <li>Every 15:32, the Griffin creates a cyclone.</li>
+                <li>Pets hit get 66.00s cooldown reduction.</li>
+                <li>Fruits hit have a 10.15% chance to receive Cyclonic (x50 multiplier).</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -222,7 +205,6 @@ export default function MutationArticlePage() {
                 Supports your entire pet team while spreading strong mutations.
             </p>
             
-            {/* PET 5: Cockatrice */}
             <h2 id="cockatrice" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Cockatrice 🐓</h2>
 
             <ArticleImage 
@@ -233,8 +215,8 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **16:35**, fruits within 20.25 studs have a **20.05% chance** to turn **Silver** and **1.01% chance** to turn **Gold**.</li>
-                <li>Every **10:22**, it spits at 5.10 targets, applying **Toxic (x15)**. Eggs gain 80.50s advancement and pets gain 802.50 XP.</li>
+                <li>Every 16:35, fruits within 20.25 studs have a 20.05% chance to turn Silver and 1.01% chance to turn Gold.</li>
+                <li>Every 10:22, it spits at 5.10 targets, applying Toxic (x15). Eggs gain 80.50s advancement and pets gain 802.50 XP.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -242,7 +224,6 @@ export default function MutationArticlePage() {
                 Great mix of mutation spreading, XP farming, and fruit upgrading.
             </p>
 
-            {/* PET 6: Phoenix */}
             <h2 id="phoenix" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">6. Phoenix 🔥</h2>
 
             <ArticleImage 
@@ -253,9 +234,9 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Pets from the mutation machine gain **+1 to +4.90 Age**.</li>
-                <li>Every **6:37**, the Phoenix flies through **4.10 fruits**, applying **Flaming (x25)**.</li>
-                <li>Fruits passed also have a **20.20% chance to mutate**.</li>
+                <li>Pets from the mutation machine gain +1 to +4.90 Age.</li>
+                <li>Every 6:37, the Phoenix flies through 4.10 fruits, applying Flaming (x25).</li>
+                <li>Fruits passed also have a 20.20% chance to mutate.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -263,7 +244,6 @@ export default function MutationArticlePage() {
                 Fast, active mutation spreader that also strengthens newly mutated pets.
             </p>
             
-            {/* PET 7: Badger */}
             <h2 id="badger" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">7. Badger 🦡</h2>
 
             <ArticleImage 
@@ -274,7 +254,7 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **5:09**, the Badger digs for **10.10s**. Fruits within 20.25 studs have a **10.10% chance per second** to gain **Cracked**.</li>
+                <li>Every 5:09, the Badger digs for 10.10s. Fruits within 20.25 studs have a 10.10% chance per second to gain Cracked.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -282,7 +262,6 @@ export default function MutationArticlePage() {
                 Applies mutations rapidly over time thanks to the per-second chance.
             </p>
 
-            {/* PET 8: Sugar Glider */}
             <h2 id="sugar-glider" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">8. Sugar Glider 🐿️</h2>
 
             <ArticleImage 
@@ -293,7 +272,7 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **19:56**, it glides between **3 fruits**, copying one mutation from each fruit and applying it to the next.</li>
+                <li>Every 19:56, it glides between 3 fruits, copying one mutation from each fruit and applying it to the next.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -301,7 +280,6 @@ export default function MutationArticlePage() {
                 Useful for linking or transferring specific mutations across targeted fruits.
             </p>
 
-            {/* PET 9: Wolf */}
             <h2 id="wolf" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">9. Wolf 🐺</h2>
 
             <ArticleImage 
@@ -312,9 +290,9 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **4:02**, the Wolf howls.</li>
-                <li>Fruits within 20.20 studs gain **Moonlit (15.15% chance)**.</li>
-                <li>You transform into a **Werewolf** for 35.01s, gaining +40.55% speed and +80.55% jump height.</li>
+                <li>Every 4:02, the Wolf howls.</li>
+                <li>Fruits within 20.20 studs gain Moonlit (15.15% chance).</li>
+                <li>You transform into a Werewolf for 35.01s, gaining +40.55% speed and +80.55% jump height.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -322,7 +300,6 @@ export default function MutationArticlePage() {
                 Spreads mutations quickly and gives a fun mobility buff for moving around your garden.
             </p>
 
-            {/* PET 10: Giraffe */}
             <h2 id="giraffe" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">10. Giraffe 🦒</h2>
 
             <ArticleImage 
@@ -333,8 +310,8 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **14:43**, the Giraffe eats fruits at least 10 studs high, selling them for **1.55x value**.</li>
-                <li>The plant gets **+67:00m growth**, and all remaining fruits on that plant gain **Arid**.</li>
+                <li>Every 14:43, the Giraffe eats fruits at least 10 studs high, selling them for 1.55x value.</li>
+                <li>The plant gets +67:00m growth, and all remaining fruits on that plant gain Arid.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -342,7 +319,6 @@ export default function MutationArticlePage() {
                 Great for tall fruit farms and boosting early growth.
             </p>
 
-            {/* PET 11: Lion */}
             <h2 id="lion" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">11. Lion 🦁</h2>
 
             <ArticleImage 
@@ -353,8 +329,8 @@ export default function MutationArticlePage() {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every **13:35**, it roars and shares **404.00s cooldown reduction** among your pets (max 60.60s each).</li>
-                <li>Every **23:07**, it mutates fruits equal to the number of Safari-type pets you own, applying a **random Safari mutation**.</li>
+                <li>Every 13:35, it roars and shares 404.00s cooldown reduction among your pets (max 60.60s each).</li>
+                <li>Every 23:07, it mutates fruits equal to the number of Safari-type pets you own, applying a random Safari mutation.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
@@ -366,14 +342,13 @@ export default function MutationArticlePage() {
 
             <h2 id="final-thoughts" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">Final Thoughts</h2>
             <p>
-                These pets are essential for players looking to maximize the value of their harvests by applying and cloning powerful mutations. Strategically placing pets like the **Corrupted Kitsune** or combining the **T-Rex** with a highly-mutated fruit can lead to trillions in sheckels!
+                These pets are essential for players looking to maximize the value of their harvests by applying and cloning powerful mutations. Strategically placing pets like the Corrupted Kitsune or combining the T-Rex with a highly-mutated fruit can lead to trillions in sheckels!
             </p>
         </article>
       </main>
 
-      {/* Footer Placeholder */}
       <footer className="bg-white border-t border-gray-200 mt-20 p-8 text-center text-sm text-gray-500">
-        <p>Return to <Link href="/" className="text-[#2B5E3A] hover:underline">GardenHub</Link></p>
+        <p>Return to <Link href="/" className="text-[#2B5E3A] hover:underline">Grow a Garden Player</Link></p>
       </footer>
     </div>
   );
