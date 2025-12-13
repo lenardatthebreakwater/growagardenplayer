@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-// NOTE: Using functional placeholders for shadcn/ui components
 const Card = ({ children, className }) => <div className={`bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md ${className}`}>{children}</div>;
 const Badge = ({ children, variant = 'default', className }) => {
   let colorClasses = 'bg-green-100 text-green-700';
