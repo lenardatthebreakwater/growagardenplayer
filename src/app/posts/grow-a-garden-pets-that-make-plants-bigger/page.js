@@ -67,20 +67,21 @@ const jsonLd = {
 };
 
 const ArticleImage = ({ src, alt, caption }) => (
-    <figure className="my-8 rounded-lg overflow-hidden shadow-lg border border-gray-100">
-        <img 
-            src={src} 
-            alt={alt} 
-            width={800} 
-            height={450} 
-            className="w-full h-auto object-cover"
-        />
-        {caption && (
-             <figcaption className="p-3 text-center text-sm text-gray-600 bg-gray-100 border-t">
-                {caption}
-            </figcaption>
-        )}
-    </figure>
+  <figure className="my-8 max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+    <div className="w-full flex justify-center bg-gray-100">
+      <img 
+        src={src} 
+        alt={alt} 
+        className="w-full h-auto object-contain block"
+        loading="lazy"
+      />
+    </div>
+    {caption && (
+      <figcaption className="p-2.5 text-center text-[11px] font-semibold text-gray-400 bg-white italic border-t border-gray-100">
+        {caption}
+      </figcaption>
+    )}
+  </figure>
 );
 
 export default function PlantSizeArticlePage() {
@@ -121,7 +122,7 @@ export default function PlantSizeArticlePage() {
         <article className="prose max-w-none text-gray-800">
             
             <p className="lead text-xl">
-                Pets aren't just for company; they are a key part of maximizing your farm's output in *Grow a Garden*. Certain pets provide massive boosts to plant size, value, and variant chance, making them essential for farming high-value fruits.
+                Pets aren't just for company; they are a key part of maximizing your farm's output in Grow a Garden. Certain pets provide massive boosts to plant size, value, and variant chance, making them essential for farming high-value fruits.
             </p>
             
             <p>
@@ -133,7 +134,7 @@ export default function PlantSizeArticlePage() {
             <h2 id="moon-cat" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">1. Moon Cat 🌙🐈</h2>
             
             <ArticleImage 
-                src="/images/moon-cat-pet.jpg" 
+                src="/images/moon-cat.jpg" 
                 alt="The Moon Cat pet from Grow a Garden, known for its ability to grant a 1.53x size bonus to new fruit while it naps." 
                 caption="The classic pet for growing massive fruits, especially Night Type plants."
             />
@@ -162,7 +163,7 @@ export default function PlantSizeArticlePage() {
             <h2 id="toucan" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Toucan 🦜</h2>
 
             <ArticleImage 
-                src="/images/toucan-pet.jpg" 
+                src="/images/toucan.jpg" 
                 alt="The Toucan pet in Grow a Garden, known for boosting the size and variant chance of tropical plants like bananas and watermelons." 
                 caption="Perfect for tropical fruit farms."
             />
@@ -190,7 +191,7 @@ export default function PlantSizeArticlePage() {
             <h2 id="blood-hedgehog" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Blood Hedgehog 🩸🦔</h2>
 
             <ArticleImage 
-                src="/images/blood-hedgehog-pet.jpg" 
+                src="/images/blood-hedgehog.jpg" 
                 alt="The Blood Hedgehog pet, which boosts the size and variant chance of prickly plants such as cacti and aloe vera." 
                 caption="A great pet for players focusing on prickly plant varieties."
             />
@@ -215,7 +216,7 @@ export default function PlantSizeArticlePage() {
             <h2 id="shroomie" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Shroomie 🍄</h2>
 
             <ArticleImage 
-                src="/images/shroomie-pet.jpg" 
+                src="/images/shroomie.jpg" 
                 alt="The Shroomie pet from Grow a Garden, which boosts plant size based on the total number of Fungus-type plants in the garden." 
                 caption="Shroomie requires a large quantity of fungus plants to maximize its effect."
             />
@@ -233,7 +234,7 @@ export default function PlantSizeArticlePage() {
             <h2 id="black-cat" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Black Cat 🐈‍⬛</h2>
 
             <ArticleImage 
-                src="/images/black-cat-pet.jpg" 
+                src="/images/black-cat.jpg" 
                 alt="The Black Cat pet resting near a Witch's Cauldron cosmetic, boosting nearby fruit size during its predictable nap cycle." 
                 caption="A reliable, stacking alternative to the Moon Cat."
             />
@@ -256,7 +257,7 @@ export default function PlantSizeArticlePage() {
 
             <h2 id="final-thoughts" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">Final Thoughts</h2>
             <p>
-                These pets are game-changers for serious farmers. By combining the right plant type with the corresponding size-boosting pet—whether it's the classic Moon Cat, the specialized Toucan or Blood Hedgehog, or the stackable Black Cat—you can significantly increase the value and rarity of your harvests. Happy farming!
+                These pets are game-changers for serious farmers. By combining the right plant type with the corresponding size-boosting pet, whether it's the classic Moon Cat, the specialized Toucan or Blood Hedgehog, or the stackable Black Cat, you can significantly increase the value and rarity of your harvests. Happy farming!
             </p>
         </article>
       </main>

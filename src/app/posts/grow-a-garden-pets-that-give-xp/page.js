@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Card = ({ children, className }) => <div className={`bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md ${className}`}>{children}</div>;
 const Badge = ({ children, variant = 'default', className }) => {
-  let colorClasses = 'bg-gray-100 text-gray-700'; // Default
+  let colorClasses = 'bg-gray-100 text-gray-700';
   if (variant === 'guides' || variant === 'Guides') colorClasses = 'bg-green-100 text-green-700';
   if (variant === 'note') colorClasses = 'bg-blue-100 text-blue-700';
   if (variant === 'tip') colorClasses = 'bg-pink-100 text-pink-700';
@@ -68,20 +68,21 @@ const jsonLd = {
 };
 
 const ArticleImage = ({ src, alt, caption }) => (
-    <figure className="my-8 rounded-lg overflow-hidden shadow-lg border border-gray-100">
-        <img 
-            src={src} 
-            alt={alt} 
-            width={800} 
-            height={450} 
-            className="w-full h-auto object-cover"
-        />
-        {caption && (
-             <figcaption className="p-3 text-center text-sm text-gray-600 bg-gray-100 border-t">
-                {caption}
-            </figcaption>
-        )}
-    </figure>
+  <figure className="my-8 max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+    <div className="w-full flex justify-center bg-gray-100">
+      <img 
+        src={src} 
+        alt={alt} 
+        className="w-full h-auto object-contain block"
+        loading="lazy"
+      />
+    </div>
+    {caption && (
+      <figcaption className="p-2.5 text-center text-[11px] font-semibold text-gray-400 bg-white italic border-t border-gray-100">
+        {caption}
+      </figcaption>
+    )}
+  </figure>
 );
 
 export default function ArticlePage() {
@@ -180,7 +181,7 @@ export default function ArticlePage() {
             />
 
             <p>
-                The Blood Owl is the original go-to pet for XP farming. It is one of five owl pets currently in the game. The other four are the Owl, Night Owl, Cooked Owl, and Barn Owl—all of which give XP, with some offering additional abilities.
+                The Blood Owl is the original go-to pet for XP farming. It is one of five owl pets currently in the game. The other four are the Owl, Night Owl, Cooked Owl, and Barn Owl, all of which give XP, with some offering additional abilities.
             </p>
             <p>
                 The Blood Owl’s ability makes all active pets gain additional XP per second. Blood Owls don’t come from eggs but from an event shop released before the Barn Owl, which is why their maximum weight at age 1 is only 1.3 kg (or 13 kg at age 100).
@@ -221,7 +222,7 @@ export default function ArticlePage() {
                 At age 100, it reaches 10 kg and now opens its frills every 12 minutes and 41 seconds. The venom spreads to 5 random pets, advancing cooldowns by 42.50 seconds or granting 900 XP.
             </p>
             <p>
-                The XP, cooldown reduction, and ability cooldown of the Dilophosaurus have no cap. The only limit is the number of pets affected, which is capped at 5—and this cap can already be reached if the Dilophosaurus hatched with 1 kg at age 1.
+                The XP, cooldown reduction, and ability cooldown of the Dilophosaurus have no cap. The only limit is the number of pets affected, which is capped at 5, and this cap can already be reached if the Dilophosaurus hatched with 1 kg at age 1.
             </p>
             <p>
                 As of this writing, the only way to obtain a Dilophosaurus is through trading.
