@@ -67,20 +67,21 @@ const jsonLd = {
 };
 
 const ArticleImage = ({ src, alt, caption }) => (
-    <figure className="my-8 rounded-lg overflow-hidden shadow-lg border border-gray-100">
-        <img 
-            src={src} 
-            alt={alt} 
-            width={800} 
-            height={450} 
-            className="w-full h-auto object-cover"
-        />
-        {caption && (
-             <figcaption className="p-3 text-center text-sm text-gray-600 bg-gray-100 border-t">
-                {caption}
-            </figcaption>
-        )}
-    </figure>
+  <figure className="my-8 max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+    <div className="w-full flex justify-center bg-gray-100">
+      <img 
+        src={src} 
+        alt={alt} 
+        className="w-full h-auto object-contain block"
+        loading="lazy"
+      />
+    </div>
+    {caption && (
+      <figcaption className="p-2.5 text-center text-[11px] font-semibold text-gray-400 bg-white italic border-t border-gray-100">
+        {caption}
+      </figcaption>
+    )}
+  </figure>
 );
 
 export default function CooldownArticlePage() {
@@ -132,7 +133,7 @@ export default function CooldownArticlePage() {
             <h2 id="dilophosaurus" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">1. Dilophosaurus 🦖</h2>
             
             <ArticleImage 
-                src="/images/dilophosaurus-cooldown-pet.jpg" 
+                src="/images/dilophosaurus.jpg" 
                 alt="The Dilophosaurus pet spitting venom at nearby pets to advance their ability cooldowns." 
                 caption="Reliable, frequent cooldown advancement with bonus XP potential."
             />
@@ -156,7 +157,7 @@ export default function CooldownArticlePage() {
             <h2 id="griffin" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Griffin 🦅</h2>
 
             <ArticleImage 
-                src="/images/griffin-cooldown-pet.jpg" 
+                src="/images/griffin.jpg" 
                 alt="The Griffin pet creating a cyclone that hits multiple pets to reduce their cooldown timers." 
                 caption="Hybrid support pet that boosts cooldowns and spreads a strong mutation."
             />
@@ -179,7 +180,7 @@ export default function CooldownArticlePage() {
             <h2 id="hotdog-dachshund" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Hotdog Dachshund 🌭</h2>
 
             <ArticleImage 
-                src="/images/hotdog-dachshund-pet.jpg" 
+                src="/images/hotdog-daschund.jpg" 
                 alt="The Hotdog Dachshund pet leaving a mustard puddle on the ground to speed up nearby pet cooldowns." 
                 caption="Fastest cooldown-supporting pet with area-based buffs."
             />
@@ -202,7 +203,7 @@ export default function CooldownArticlePage() {
             <h2 id="lion" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Lion 🦁</h2>
 
             <ArticleImage 
-                src="/images/lion-cooldown-pet.jpg" 
+                src="/images/lion.jpg" 
                 alt="The Lion pet roaring to pull all pets toward it and distribute a large burst of cooldown reduction." 
                 caption="Strong burst of cooldown reduction shared across your entire pet team."
             />
@@ -220,7 +221,7 @@ export default function CooldownArticlePage() {
             <h2 id="meerkat" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Meerkat 🐒</h2>
 
             <ArticleImage 
-                src="/images/meerkat-pet.jpg" 
+                src="/images/meerkat.jpg" 
                 alt="The Meerkat pet performing a lookout action, advancing a single pet's ability cooldown by a set amount." 
                 caption="Can chain multiple cooldown boosts if the repeat chance triggers."
             />
@@ -239,7 +240,7 @@ export default function CooldownArticlePage() {
             <h2 id="oxpecker" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">6. Oxpecker 🐦</h2>
 
             <ArticleImage 
-                src="/images/oxpecker-pet.jpg" 
+                src="/images/oxpecker.jpg" 
                 alt="The Oxpecker pet sitting on a Safari pet, reducing the cooldown of that pet after it uses its ability." 
                 caption="A must-have in Safari-heavy teams to make all their abilities cycle faster."
             />
@@ -257,7 +258,7 @@ export default function CooldownArticlePage() {
             <h2 id="peach-wasp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">7. Peach Wasp 🍑🐝</h2>
 
             <ArticleImage 
-                src="/images/peach-wasp-pet.jpg" 
+                src="/images/peach-wasp.jpg" 
                 alt="The Peach Wasp pet stinging a pet to advance its cooldown and applying Plasma to a fruit." 
                 caption="Steady cooldown boosts plus the Plasma mutation for extra value."
             />
@@ -276,7 +277,7 @@ export default function CooldownArticlePage() {
             <h2 id="peacock" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">8. Peacock 🦚</h2>
 
             <ArticleImage 
-                src="/images/peacock-pet.jpg" 
+                src="/images/peacock.jpg" 
                 alt="The Peacock pet fanning its feathers to send out a large wave that reduces the cooldowns of all active pets." 
                 caption="One of the best AoE cooldown boosters for large gardens."
             />
@@ -294,7 +295,7 @@ export default function CooldownArticlePage() {
             <h2 id="queen-bee" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">9. Queen Bee 👑🐝</h2>
 
             <ArticleImage 
-                src="/images/queen-bee-pet.jpg" 
+                src="/images/queen-bee.jpg" 
                 alt="The Queen Bee pet flying near a pet with a long cooldown and fully refreshing its ability." 
                 caption="Its ability refresh is extremely strong for top-tier cooldown-intensive pets."
             />
@@ -313,7 +314,7 @@ export default function CooldownArticlePage() {
             <h2 id="red-squirrel" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">10. Red Squirrel 🐿️</h2>
 
             <ArticleImage 
-                src="/images/red-squirrel-pet.jpg" 
+                src="/images/red-squirrel.jpg" 
                 alt="The Red Squirrel pet watching a Fall-type pet, reducing the cooldown of that pet after it uses its ability." 
                 caption="Pairs perfectly with Fall pets to speed up their cycles."
             />
@@ -331,7 +332,7 @@ export default function CooldownArticlePage() {
             <h2 id="spider" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">11. Spider 🕷️</h2>
 
             <ArticleImage 
-                src="/images/spider-pet.jpg" 
+                src="/images/spider.jpg" 
                 alt="The Spider pet weaving a web that speeds up both pet cooldowns and plant growth simultaneously." 
                 caption="A powerful area buff that helps both pets and plants simultaneously."
             />
@@ -354,7 +355,7 @@ export default function CooldownArticlePage() {
             <h2 id="tarantula-hawk" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">12. Tarantula Hawk 🕸️</h2>
 
             <ArticleImage 
-                src="/images/tarantula-hawk-pet.jpg" 
+                src="/images/tarantula-hawk.jpg" 
                 alt="The Tarantula Hawk pet stinging a pet and advancing its cooldown by a large amount." 
                 caption="Very frequent cooldown boosts plus a strong mutation bonus."
             />
@@ -373,7 +374,7 @@ export default function CooldownArticlePage() {
             <h2 id="wasp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">13. Wasp 🐝</h2>
 
             <ArticleImage 
-                src="/images/wasp-pet.jpg" 
+                src="/images/wasp.jpg" 
                 alt="The Wasp pet stinging a pet to reduce its cooldown and pollinating a nearby fruit." 
                 caption="A solid utility pet with reliable cooldown advancement."
             />
