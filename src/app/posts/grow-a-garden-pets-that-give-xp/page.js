@@ -148,19 +148,8 @@ export default function ArticlePage() {
                 The first pet on this list is the most widely used for XP farming. The Capybara is not only incredibly useful but also one of the most adorable pets in the game.
             </p>
             <p>
-                The Capybara’s ability makes all nearby pets stop losing hunger and gain a certain amount of XP every second. A Capybara with a weight of 1 kg at age 1 gives 3.3 XP per second to all pets within 14.75 studs. When leveled up to age 100, its weight increases to 10 kg, and its ability gives 6 XP per second to all pets within 17 studs.
+                The Capybara’s ability makes all nearby pets stop losing hunger and gain a certain amount of XP every second. A Capybara with a weight of 1 kg at age 1 gives 3.3 XP per second to all pets within 14.75 studs.
             </p>
-            <p>
-                The cap on the Capybara’s ability is 30 XP per second, though its radius has no limit. To reach the 30 XP/sec cap, you’ll need to hatch a 9 kg Capybara at age 1 Godly and level it up to age 100.
-            </p>
-            
-            <Card className="p-4 my-6 bg-gray-50 border-gray-200">
-                <Badge variant="note" className="mb-2">Note on Pet Weight</Badge>
-                <p className="text-sm text-gray-700">
-                    Pets hatched from eggs can be born as Huge (5–6.9 kg), Semi-Titanic (7–7.4 kg), Titanic (7.5–8.9 kg), or Godly (9+ kg).
-                </p>
-            </Card>
-
             <p>
                 Capybaras can be obtained through trading or by hatching a Paradise Egg. The Paradise Egg is sold by the Summer Seed Merchant, one of the rotating merchants that appears every four hours.
             </p>
@@ -168,7 +157,7 @@ export default function ArticlePage() {
             <Card className="p-4 my-6 bg-pink-50 border-pink-200">
                 <Badge variant="tip" className="mb-2">Pro Tip</Badge>
                 <p className="text-sm text-gray-700">
-                    Capybaras work best when paired with the Pancake Stack cosmetic, since it attracts pets toward it. Unfortunately, as of this writing, the Pancake Stack cosmetic is no longer obtainable.
+                    Capybaras work best when paired with the Pancake Stack cosmetic or Horse Shoe Magnet cosmetic, since both  attract pets toward it.
                 </p>
             </Card>
 
@@ -183,25 +172,13 @@ export default function ArticlePage() {
             <p>
                 The Blood Owl is the original go-to pet for XP farming. It is one of five owl pets currently in the game. The other four are the Owl, Night Owl, Cooked Owl, and Barn Owl, all of which give XP, with some offering additional abilities.
             </p>
-            <p>
-                The Blood Owl’s ability makes all active pets gain additional XP per second. Blood Owls don’t come from eggs but from an event shop released before the Barn Owl, which is why their maximum weight at age 1 is only 1.3 kg (or 13 kg at age 100).
-            </p>
-
-            <Card className="p-4 my-6 bg-gray-50 border-gray-200">
-                <Badge variant="note" className="mb-2">Note on Store Pets</Badge>
-                <p className="text-sm text-gray-700">
-                    Unlike pets hatched from eggs, store pets can only reach up to 1.3 kg at age 1. With Barn Owls, this can increase to 4.3 kg.
-                </p>
-            </Card>
             
             <p>
-                A Blood Owl with 1 kg at age 1 lets all active pets gain an additional 0.58 XP per second. At age 100, it reaches 10 kg and lets them gain 1.30 XP per second. Meanwhile, a Blood Owl with a 1.3 kg weight at age 1 lets all active pets gain 0.60 XP per second. At age 100, it reaches 13 kg and lets them gain 1.54 XP per second.
+                The Blood Owl’s ability makes all active pets gain additional XP per second. 
+                A Blood Owl with 1 kg at age 1 lets all active pets gain an additional 0.58 XP per second.
             </p>
             <p>
                 The Blood Owl provides less XP compared to the Capybara, but its major advantage is that its ability affects all pets in the garden, regardless of distance, unlike the Capybara’s area-limited effect.
-            </p>
-            <p>
-                As of this writing, the only way to obtain a Blood Owl is through trading.
             </p>
 
             <h2 id="dilophosaurus" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Dilophosaurus 🦖</h2>
@@ -218,15 +195,6 @@ export default function ArticlePage() {
             <p>
                 A Dilophosaurus with a 1 kg weight at age 1 opens its frills and spits venom every 13 minutes and 57 seconds. The venom spreads to around 3.20 random pets, advancing cooldowns by 40.25 seconds or granting 540 XP.
             </p>
-            <p>
-                At age 100, it reaches 10 kg and now opens its frills every 12 minutes and 41 seconds. The venom spreads to 5 random pets, advancing cooldowns by 42.50 seconds or granting 900 XP.
-            </p>
-            <p>
-                The XP, cooldown reduction, and ability cooldown of the Dilophosaurus have no cap. The only limit is the number of pets affected, which is capped at 5, and this cap can already be reached if the Dilophosaurus hatched with 1 kg at age 1.
-            </p>
-            <p>
-                As of this writing, the only way to obtain a Dilophosaurus is through trading.
-            </p>
 
             <h2 id="wisp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Wisp ✨</h2>
 
@@ -237,19 +205,10 @@ export default function ArticlePage() {
             />
             
             <p>
-                Last but not least is the Wisp, the most recent pet included in this list. This pet is similar to the Blood Owl, not only in its ability but also in the fact that it came from an event shop. Just like the Blood Owl, the Wisp was released before the Barn Owl, making its maximum weight at age 1 only 1.3 kg.
+                Last but not least is the Wisp, the most recent pet included in this list. This pet is similar to the Blood Owl.
             </p>
             <p>
-                The Wisp’s ability works as long as you have a Wisp Well in your garden. When active, the Wisp visits the well and grants all pets additional XP per second.
-            </p>
-            <p>
-                A Wisp with 1 kg at age 1 grants 0.74 XP per second. At age 100, it reaches 10 kg and grants 1.64 XP per second. Meanwhile, a Wisp with 1.3 kg at age 1 grants 0.77 XP per second. At age 100, it reaches 13 kg and grants 1.94 XP per second.
-            </p>
-            <p>
-                The Wisp is a slightly improved version of the Blood Owl; however, for its ability to work, you must have the Wisp Well cosmetic placed in your garden. Players who do not own the Wisp Well will not be able to use this pet’s ability.
-            </p>
-            <p>
-                As of now, the Wisp can only be obtained through trading.
+                It’s ability works as long as you have a Wisp Well in your garden. When active, the Wisp visits the well and grants all pets additional XP per second. A Wisp with 1 kg at age 1 grants 0.74 XP per second.
             </p>
 
             <Separator className="my-10" />

@@ -67,20 +67,21 @@ const jsonLd = {
 };
 
 const ArticleImage = ({ src, alt, caption }) => (
-    <figure className="my-8 rounded-lg overflow-hidden shadow-lg border border-gray-100">
-        <img 
-            src={src} 
-            alt={alt} 
-            width={800} 
-            height={450} 
-            className="w-full h-auto object-cover"
-        />
-        {caption && (
-             <figcaption className="p-3 text-center text-sm text-gray-600 bg-gray-100 border-t">
-                {caption}
-            </figcaption>
-        )}
-    </figure>
+  <figure className="my-8 max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+    <div className="w-full flex justify-center bg-gray-100">
+      <img 
+        src={src} 
+        alt={alt} 
+        className="w-full h-auto object-contain block"
+        loading="lazy"
+      />
+    </div>
+    {caption && (
+      <figcaption className="p-2.5 text-center text-[11px] font-semibold text-gray-400 bg-white italic border-t border-gray-100">
+        {caption}
+      </figcaption>
+    )}
+  </figure>
 );
 
 export default function MutationArticlePage() {
@@ -132,7 +133,7 @@ export default function MutationArticlePage() {
             <h2 id="t-rex" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">1. T-Rex 🦖</h2>
             
             <ArticleImage 
-                src="/images/t-rex-pet.jpg" 
+                src="/images/t-rex.jpg" 
                 alt="The T-Rex pet in Grow a Garden, roaring after consuming and spreading a mutation to nearby fruits." 
                 caption="The T-Rex rapidly clones valuable mutations across your garden."
             />
@@ -150,7 +151,7 @@ export default function MutationArticlePage() {
             <h2 id="kappa" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Kappa 💧</h2>
 
             <ArticleImage 
-                src="/images/kappa-pet.jpg" 
+                src="/images/kappa.jpg" 
                 alt="The Kappa pet spraying water on surrounding plants, applying the Wet mutation to fruits in Grow a Garden." 
                 caption="The Kappa offers consistent AoE mutation spreading."
             />
@@ -169,7 +170,7 @@ export default function MutationArticlePage() {
             <h2 id="corrupted-kitsune" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Corrupted Kitsune 🔮</h2>
 
             <ArticleImage 
-                src="/images/corrupted-kitsune-pet.jpg" 
+                src="/images/corrupted-kitsune.jpg" 
                 alt="The Corrupted Kitsune pet firing cursed energy at multiple fruits, with a chance to apply the Corrupt Chakra mutation." 
                 caption="A top-tier pet for applying extremely high mutation multipliers."
             />
@@ -188,7 +189,7 @@ export default function MutationArticlePage() {
             <h2 id="griffin" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Griffin 🦅</h2>
 
             <ArticleImage 
-                src="/images/griffin-pet.jpg" 
+                src="/images/griffin.jpg" 
                 alt="The Griffin pet creating a cyclone that hits both fruits and other pets, applying the Cyclonic mutation." 
                 caption="Supports your pet team while spreading strong mutations."
             />
@@ -208,7 +209,7 @@ export default function MutationArticlePage() {
             <h2 id="cockatrice" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Cockatrice 🐓</h2>
 
             <ArticleImage 
-                src="/images/cockatrice-pet.jpg" 
+                src="/images/cockatrice.jpg" 
                 alt="The Cockatrice pet spitting venom and spreading mutations like Silver, Gold, and Toxic to fruits." 
                 caption="A versatile pet mixing mutation spreading, XP farming, and fruit upgrading."
             />
@@ -227,7 +228,7 @@ export default function MutationArticlePage() {
             <h2 id="phoenix" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">6. Phoenix 🔥</h2>
 
             <ArticleImage 
-                src="/images/phoenix-pet.jpg" 
+                src="/images/phoenix.jpg" 
                 alt="The Phoenix pet flying over fruits, applying the Flaming mutation and strengthening newly mutated pets." 
                 caption="A fast, active mutation spreader that also strengthens newly mutated pets."
             />
@@ -247,7 +248,7 @@ export default function MutationArticlePage() {
             <h2 id="badger" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">7. Badger 🦡</h2>
 
             <ArticleImage 
-                src="/images/badger-pet.jpg" 
+                src="/images/badger.jpg" 
                 alt="The Badger pet digging in the ground, causing fruits within its area to gain the Cracked mutation." 
                 caption="Applies the Cracked mutation rapidly over time."
             />
@@ -265,7 +266,7 @@ export default function MutationArticlePage() {
             <h2 id="sugar-glider" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">8. Sugar Glider 🐿️</h2>
 
             <ArticleImage 
-                src="/images/sugar-glider-pet.jpg" 
+                src="/images/sugar-glider.jpg" 
                 alt="The Sugar Glider pet gliding between fruits, copying and transferring mutations between them." 
                 caption="Useful for transferring specific mutations across targeted fruits."
             />
@@ -283,7 +284,7 @@ export default function MutationArticlePage() {
             <h2 id="wolf" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">9. Wolf 🐺</h2>
 
             <ArticleImage 
-                src="/images/wolf-pet.jpg" 
+                src="/images/wolf.jpg" 
                 alt="The Wolf pet howling, spreading the Moonlit mutation to nearby fruits and transforming the player into a Werewolf." 
                 caption="Spreads mutations quickly and gives a fun mobility buff."
             />
@@ -303,7 +304,7 @@ export default function MutationArticlePage() {
             <h2 id="giraffe" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">10. Giraffe 🦒</h2>
 
             <ArticleImage 
-                src="/images/giraffe-pet.jpg" 
+                src="/images/giraffe.jpg" 
                 alt="The Giraffe pet eating a tall fruit, which applies the Arid mutation to the remaining fruits on the plant." 
                 caption="Great for tall fruit farms and boosting early growth."
             />
@@ -322,7 +323,7 @@ export default function MutationArticlePage() {
             <h2 id="lion" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">11. Lion 🦁</h2>
 
             <ArticleImage 
-                src="/images/lion-pet.jpg" 
+                src="/images/lion.jpg" 
                 alt="The Lion pet roaring, sharing cooldown reduction among pets and applying random Safari mutations to fruits." 
                 caption="A strong team-support pet that also spreads Safari mutations."
             />
