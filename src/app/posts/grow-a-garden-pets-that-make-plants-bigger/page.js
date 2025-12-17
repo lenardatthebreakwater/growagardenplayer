@@ -140,7 +140,7 @@ export default function PlantSizeArticlePage() {
             />
             
             <p>
-                The Moon Cat is an OG meta pet for growing massive fruits back in the early days of *Grow a Garden*. It’s beloved by many players not just because of its powerful ability, but also for its adorable appearance.
+                The Moon Cat is an OG meta pet for growing massive fruits back in the early days of Grow a Garden. It’s beloved by many players not just because of its powerful ability, but also for its adorable appearance.
             </p>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
@@ -150,14 +150,11 @@ export default function PlantSizeArticlePage() {
                 <li>6.83% chance Night Type fruit stays after harvest</li>
             </ul>
 
-            <p>
+            <p className="mt-4">
                 Players used to make really large fruits with this pet all the time and would sell those fruits for millions of sheckels. Mooncats were commonly paired with Triceratops, creating the iconic Tri-Moon method, which was once one of the most popular methods among players.
             </p>
-            <p>
-                The Moon Cat can be used with all types of fruits, but to take advantage of its second ability, you can check the official *Grow a Garden* wiki for the full list of Night Type fruits. Many players have long preferred using Mooncats with Moon Melons, though newer Night Type plants like the Wereplant and Trinity Fruit have since emerged, both offering a much higher base value than the classic Moon Melon.
-            </p>
-            <p>
-                The Moon Cat declined in popularity after the release of the Black Cat, which is simply a better version of the Moon Cat (minus the Night Type fruit bonus). Even so, there are still plenty of players who enjoy using the Moon Cat for its nostalgic charm.
+            <p className="mt-4">
+              The Moon Cat works on any fruit type, but its second ability only applies to Night-type plants. Many players have long preferred pairing Moon Cats with Moon Melons, though newer Night-type plants like the Wereplant and Trinity Fruit have since emerged, both offering a much higher base value than the classic Moon Melon. The Moon Cat declined in popularity after the release of the Black Cat, which is simply a better version of the Moon Cat (minus the Night Type fruit bonus). Even so, there are still plenty of players who enjoy using the Moon Cat for its nostalgic charm.
             </p>
 
             <h2 id="toucan" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Toucan 🦜</h2>
@@ -169,7 +166,7 @@ export default function PlantSizeArticlePage() {
             />
 
             <p>
-                The Toucan is a great pet for players who love growing tropical fruits in *Grow a Garden*. It’s simple to use and provides a consistent size and variant boost to nearby plants.
+                The Toucan is a great pet for players who love growing tropical fruits in Grow a Garden. It’s simple to use and provides a consistent size and variant boost to nearby plants.
             </p>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
@@ -178,14 +175,11 @@ export default function PlantSizeArticlePage() {
                 <li>Grants all tropical plants within 25.25 studs a 1.26x variant chance bonus</li>
             </ul>
             
-            <p>
+            <p className="mt-4">
                 This means that tropical fruits near a Toucan can grow larger and have a higher chance of becoming gold or rainbow variants. Some examples of these fruits include Banana, Coconut, Dragon Fruit, Mango, Papaya, Starfruit, and Watermelon.
             </p>
-            <p>
-                Back then, the Toucan played a major role in the famous Honeysuckle Method. Before an update changed the plant’s type, Honeysuckle was considered tropical. Players used eight Toucans together with a sprinkler glitch to grow massive honeysuckle fruits worth trillions. The glitch worked on all types of sprinklers, allowing one sprinkler to stay active indefinitely as long as the player stayed in the game. This made it possible to continuously grow huge fruits without worrying about timers running out.
-            </p>
-            <p>
-                The developers later patched the glitch and removed Honeysuckle from the tropical category. Even so, the Toucan remains a useful pet for growing tropical fruits that are both bigger and more likely to turn gold or rainbow.
+            <p className="mt-4">
+                Back then, the Toucan played a major role in the famous Honeysuckle Method. Before an update changed the plant’s type, Honeysuckle was considered tropical. Players used eight Toucans together with a sprinkler glitch to grow massive honeysuckle fruits worth trillions. The developers later patched the glitch and removed Honeysuckle from the tropical category. Even so, the Toucan remains a useful pet for growing tropical fruits that are both bigger and more likely to turn gold or rainbow.
             </p>
 
             <h2 id="blood-hedgehog" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Blood Hedgehog 🩸🦔</h2>
@@ -197,7 +191,7 @@ export default function PlantSizeArticlePage() {
             />
 
             <p>
-                The Blood Hedgehog is a fun choice for players who enjoy growing prickly plants in *Grow a Garden*. While it’s not considered a meta pet, it offers impressive boosts that make your spiky garden more powerful.
+                The Blood Hedgehog is a fun choice for players who enjoy growing prickly plants in Grow a Garden. While it’s not considered a meta pet, it offers impressive boosts that make your spiky garden more powerful.
             </p>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
@@ -206,11 +200,8 @@ export default function PlantSizeArticlePage() {
                 <li>Grants all prickly plants within 22.20 studs a 2.02x variant chance bonus</li>
             </ul>
 
-            <p>
-                This means that all prickly plants near a Blood Hedgehog can grow much larger and have a higher chance of turning into gold or rainbow variants. Some examples of these plants include Aloe Vera, Blooming Cactus, Dragon Fruit, Horned Dinoshroom, Prickly Pear, and Venus Fly Trap.
-            </p>
-            <p>
-                Even though the Blood Hedgehog isn’t a top meta pet, it’s a lot of fun to use because of the sheer number of interesting prickly plants in the game, two of which are of transcendent rarity and many are of prismatic rarity.
+            <p className="mt-4">
+                This means that all prickly plants near a Blood Hedgehog can grow much larger and have a higher chance of turning into gold or rainbow variants. Some examples of these plants include Aloe Vera, Blooming Cactus, Dragon Fruit, Horned Dinoshroom, Prickly Pear, and Venus Fly Trap. Even though the Blood Hedgehog isn’t a top meta pet, it’s a lot of fun to use because of the sheer number of interesting prickly plants in the game, two of which are of transcendent rarity and many are of prismatic rarity.
             </p>
             
             <h2 id="shroomie" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Shroomie 🍄</h2>
@@ -249,7 +240,7 @@ export default function PlantSizeArticlePage() {
                 <li>Any new fruit within 10.10 studs during this time will be 1.10x larger.</li>
             </ul>
 
-            <p>
+            <p className="mt-4">
                 Although its cooldown is longer than the Moon Cat’s, the Black Cat’s consistent positioning makes it a reliable choice. The only limitation is that it requires the Witch’s Cauldron cosmetic for its ability to work.
             </p>
 

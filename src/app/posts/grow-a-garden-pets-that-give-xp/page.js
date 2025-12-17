@@ -126,12 +126,8 @@ export default function ArticlePage() {
                 In Grow a Garden, one of the most enjoyable things to do is level up pets and mutate them using the Mutation Machine or the Headless Horseman. Not only is it exciting to see what random mutation your pet gets, but certain mutations can also increase the pet’s value.
             </p>
 
-            <p>
-                To level up a pet, simply place it in your garden and make sure to feed it when it gets hungry. Over time, it will accumulate enough experience points (XP) to grow in age. Pets continue gaining XP even while you’re offline, but it can still take quite a while to reach higher levels.
-            </p>
-
-            <p>
-                The good news is that several pets in the game have abilities that grant XP to other pets, making the leveling process much faster. In this article, I’ve listed the best ones.
+            <p className="mt-4">
+                To level up a pet, simply place it in your garden and make sure to feed it when it gets hungry. Over time, it will accumulate enough experience points (XP) to grow in age. Pets continue gaining XP even while you’re offline, but it can still take quite a while to reach higher levels. The good news is that several pets in the game have abilities that grant XP to other pets, making the leveling process much faster. In this article, I’ve listed the best ones.
             </p>
 
             <Separator className="my-10" />
@@ -147,11 +143,8 @@ export default function ArticlePage() {
             <p>
                 The first pet on this list is the most widely used for XP farming. The Capybara is not only incredibly useful but also one of the most adorable pets in the game.
             </p>
-            <p>
+            <p className="mt-4">
                 The Capybara’s ability makes all nearby pets stop losing hunger and gain a certain amount of XP every second. A Capybara with a weight of 1 kg at age 1 gives 3.3 XP per second to all pets within 14.75 studs.
-            </p>
-            <p>
-                Capybaras can be obtained through trading or by hatching a Paradise Egg. The Paradise Egg is sold by the Summer Seed Merchant, one of the rotating merchants that appears every four hours.
             </p>
 
             <Card className="p-4 my-6 bg-pink-50 border-pink-200">
@@ -173,12 +166,9 @@ export default function ArticlePage() {
                 The Blood Owl is the original go-to pet for XP farming. It is one of five owl pets currently in the game. The other four are the Owl, Night Owl, Cooked Owl, and Barn Owl, all of which give XP, with some offering additional abilities.
             </p>
             
-            <p>
+            <p className="mt-4"> 
                 The Blood Owl’s ability makes all active pets gain additional XP per second. 
-                A Blood Owl with 1 kg at age 1 lets all active pets gain an additional 0.58 XP per second.
-            </p>
-            <p>
-                The Blood Owl provides less XP compared to the Capybara, but its major advantage is that its ability affects all pets in the garden, regardless of distance, unlike the Capybara’s area-limited effect.
+                A Blood Owl with 1 kg at age 1 lets all active pets gain an additional 0.58 XP per second. The Blood Owl provides less XP compared to the Capybara, but its major advantage is that its ability affects all pets in the garden, regardless of distance, unlike the Capybara’s area-limited effect.
             </p>
 
             <h2 id="dilophosaurus" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Dilophosaurus 🦖</h2>
@@ -190,10 +180,7 @@ export default function ArticlePage() {
             />
 
             <p>
-                The Dilophosaurus is a fan favorite and one of the best dino pets in the game. Its ability allows it to open its frills and spit venom. The venom spreads to other random pets, advancing cooldowns or granting XP.
-            </p>
-            <p>
-                A Dilophosaurus with a 1 kg weight at age 1 opens its frills and spits venom every 13 minutes and 57 seconds. The venom spreads to around 3.20 random pets, advancing cooldowns by 40.25 seconds or granting 540 XP.
+                The Dilophosaurus is a fan favorite and one of the best dino pets in the game. Its ability allows it to open its frills and spit venom. The venom spreads to other random pets, advancing cooldowns or granting XP. A Dilophosaurus with a 1 kg weight at age 1 opens its frills and spits venom every 13 minutes and 57 seconds. The venom spreads to around 3.20 random pets, advancing cooldowns by 40.25 seconds or granting 540 XP.
             </p>
 
             <h2 id="wisp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Wisp ✨</h2>
@@ -205,10 +192,19 @@ export default function ArticlePage() {
             />
             
             <p>
-                Last but not least is the Wisp, the most recent pet included in this list. This pet is similar to the Blood Owl.
+              The Wisp pet is similar to the Blood Owl. It’s ability works as long as you have a Wisp Well in your garden. When active, the Wisp visits the well and grants all pets additional XP per second. A Wisp with 1 kg at age 1 grants 0.74 XP per second.
             </p>
+
+            <h2 id="golden-piggy" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Golden Piggy</h2>
+
+            <ArticleImage 
+                src="/images/golden-piggy.jpg" 
+                alt="The Golden Piggy pet in Grow a Garden, which grants bonus XP to nearby pets based on the number of Gold Ingot cosmetics placed." 
+                caption="The Golden Piggy scales its XP boost with Gold Ingot cosmetics."
+            />
+            
             <p>
-                It’s ability works as long as you have a Wisp Well in your garden. When active, the Wisp visits the well and grants all pets additional XP per second. A Wisp with 1 kg at age 1 grants 0.74 XP per second.
+              Last but not least is the Golden Piggy, a slightly better version of the Capybara that features an equally adorable design. Its ability is as follows: at age 1 with 1 kg, all nearby pets within 30.15 studs will gain additional 0.11 XP per second for every Gold Ingot Cosmetic in the player's garden. 
             </p>
 
             <Separator className="my-10" />

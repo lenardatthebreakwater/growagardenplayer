@@ -122,10 +122,7 @@ export default function MutationArticlePage() {
         <article className="prose max-w-none text-gray-800">
             
             <p className="lead text-xl">
-                Some pets in *Grow a Garden* specialize in spreading mutations that boost fruit value and garden efficiency. This guide explains what each mutation-spreading pet does and why they’re useful.
-            </p>
-            <p className="text-sm italic text-gray-600 mb-8">
-                (Assumes each pet is Age 1, 1kg, and has no pet mutation.)
+                Some pets in Grow a Garden specialize in spreading mutations that boost fruit value and garden efficiency. This guide explains what each mutation-spreading pet does and why they’re useful.
             </p>
 
             <Separator className="my-10" />

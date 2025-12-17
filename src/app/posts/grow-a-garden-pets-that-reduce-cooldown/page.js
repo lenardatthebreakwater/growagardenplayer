@@ -124,9 +124,6 @@ export default function CooldownArticlePage() {
             <p className="lead text-xl">
                 Cooldown-reduction pets are vital for efficiency. They help your entire pet team activate abilities more often, making your garden run much faster and maximizing your yield or experience gains.
             </p>
-            <p className="text-sm italic text-gray-600 mb-8">
-                (Assumes each pet is Age 1, 1kg, and has no pet mutation.)
-            </p>
 
             <Separator className="my-10" />
 
