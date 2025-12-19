@@ -67,7 +67,7 @@ const jsonLd = {
 };
 
 const ArticleImage = ({ src, alt, caption }) => (
-  <figure className="my-8 max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+  <figure className="my-8 max-w-xs mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
     <div className="w-full flex justify-center bg-gray-100">
       <img 
         src={src} 

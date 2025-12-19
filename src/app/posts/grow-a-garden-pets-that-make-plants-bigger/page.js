@@ -67,7 +67,7 @@ const jsonLd = {
 };
 
 const ArticleImage = ({ src, alt, caption }) => (
-  <figure className="my-8 max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
+  <figure className="my-8 max-w-xs mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
     <div className="w-full flex justify-center bg-gray-100">
       <img 
         src={src} 
@@ -125,7 +125,7 @@ export default function PlantSizeArticlePage() {
                 Pets aren't just for company; they are a key part of maximizing your farm's output in Grow a Garden. Certain pets provide massive boosts to plant size, value, and variant chance, making them essential for farming high-value fruits.
             </p>
             
-            <p>
+            <p className="mt-4">
                 Here are the best pets dedicated to making your plants grow bigger, categorized by their specific target plant types.
             </p>
 
