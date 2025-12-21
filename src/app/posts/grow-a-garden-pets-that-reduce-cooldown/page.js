@@ -146,11 +146,6 @@ export default function CooldownArticlePage() {
                 </li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Reliable, frequent cooldown advancement with bonus XP potential.
-            </p>
-
             <h2 id="griffin" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Griffin 🦅</h2>
 
             <ArticleImage 
@@ -168,11 +163,6 @@ export default function CooldownArticlePage() {
                     </ul>
                 </li>
             </ul>
-            
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Hybrid support pet that boosts cooldowns and spreads a strong mutation.
-            </p>
 
             <h2 id="hotdog-dachshund" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Hotdog Dachshund 🌭</h2>
 
@@ -191,11 +181,6 @@ export default function CooldownArticlePage() {
                     </ul>
                 </li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Fastest cooldown-supporting pet with area-based buffs.
-            </p>
             
             <h2 id="lion" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Lion 🦁</h2>
 
@@ -209,11 +194,6 @@ export default function CooldownArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>Every 13:35, the Lion roars and pulls all pets toward it, distributing 404.00s of cooldown advancement (max 60.60s each).</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Strong burst of cooldown reduction shared across your entire pet team.
-            </p>
             
             <h2 id="meerkat" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Meerkat 🐒</h2>
 
@@ -229,11 +209,6 @@ export default function CooldownArticlePage() {
                 <li>There is also a 15.25% chance to immediately repeat the action.</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Can chain multiple cooldown boosts if the repeat chance triggers.
-            </p>
-
             <h2 id="oxpecker" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">6. Oxpecker 🐦</h2>
 
             <ArticleImage 
@@ -246,11 +221,6 @@ export default function CooldownArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>After any Safari pet uses its ability, its cooldown begins 14.40s shorter.</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                A must-have in Safari-heavy teams to make all their abilities cycle faster.
-            </p>
             
             <h2 id="peach-wasp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">7. Peach Wasp 🍑🐝</h2>
 
@@ -266,11 +236,6 @@ export default function CooldownArticlePage() {
                 <li>Every 9:57, stings a random pet, advancing its cooldown by 60.60s.</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Steady cooldown boosts plus the Plasma mutation for extra value.
-            </p>
-
             <h2 id="peacock" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">8. Peacock 🦚</h2>
 
             <ArticleImage 
@@ -283,11 +248,6 @@ export default function CooldownArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>Every 10:00, fans its feathers and advances the cooldowns of all active pets within 20.20 studs by 65.60s.</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                One of the best AoE cooldown boosters for large gardens.
-            </p>
 
             <h2 id="queen-bee" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">9. Queen Bee 👑🐝</h2>
 
@@ -303,11 +263,6 @@ export default function CooldownArticlePage() {
                 <li>Every 21:51, the pet with the highest cooldown gets its ability fully refreshed.</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Its ability refresh is extremely strong for top-tier cooldown-intensive pets.
-            </p>
-
             <h2 id="red-squirrel" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">10. Red Squirrel 🐿️</h2>
 
             <ArticleImage 
@@ -320,11 +275,6 @@ export default function CooldownArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>After any Fall-type pet finishes its ability, its cooldown starts 14.40s shorter.</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Pairs perfectly with Fall pets to speed up their cycles.
-            </p>
 
             <h2 id="spider" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">11. Spider 🕷️</h2>
 
@@ -344,11 +294,6 @@ export default function CooldownArticlePage() {
                 </li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                A powerful area buff that helps both pets and plants simultaneously.
-            </p>
-
             <h2 id="tarantula-hawk" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">12. Tarantula Hawk 🕸️</h2>
 
             <ArticleImage 
@@ -363,11 +308,6 @@ export default function CooldownArticlePage() {
                 <li>Every 4:59, stings a pet and advances its cooldown by 80.80s.</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Very frequent cooldown boosts plus a strong mutation bonus.
-            </p>
-
             <h2 id="wasp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">13. Wasp 🐝</h2>
 
             <ArticleImage 
@@ -381,11 +321,6 @@ export default function CooldownArticlePage() {
                 <li>Every 29:42, pollinates a nearby fruit.</li>
                 <li>Every 9:54, stings a pet, advancing its cooldown by 60.60s.</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>
-                Similar to Peach Wasp but with Pollinated and longer intervals.
-            </p>
             
             <Separator className="my-10" />
 
