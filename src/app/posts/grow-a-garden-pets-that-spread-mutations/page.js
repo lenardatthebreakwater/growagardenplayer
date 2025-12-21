@@ -80,8 +80,6 @@ export default function MutationArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>Every 5:09, the Badger digs for 10.10s. Fruits within 20.25 studs have a 10.10% chance per second to gain Cracked.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Applies mutations rapidly over time thanks to the per-second chance.</p>
 
             {/* 2. COCKATRICE */}
             <h2 id="cockatrice" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Cockatrice 🐓</h2>
@@ -91,8 +89,6 @@ export default function MutationArticlePage() {
                 <li>Every 16:35, fruits within 20.25 studs have a 20.05% chance to turn Silver and 1.01% chance to turn Gold.</li>
                 <li>Every 10:22, it spits at 5.10 targets, applying Toxic (x15). Eggs gain 80.50s advancement and pets gain 802.50 XP.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Great mix of mutation spreading, XP farming, and fruit upgrading.</p>
 
             {/* 3. CORRUPTED KITSUNE */}
             <h2 id="corrupted-kitsune" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Corrupted Kitsune 🔮</h2>
@@ -102,8 +98,6 @@ export default function MutationArticlePage() {
                 <li>Every 20:56, it fires cursed energy at 9 fruits.</li>
                 <li>Each fruit has a 20.20% chance to gain Corrupt Chakra and a very rare chance to gain Corrupt Foxfire Chakra.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>One of the strongest mutation pets, capable of applying extremely high multipliers (up to x90).</p>
 
             {/* 4. DARK SPRIGGAN */}
             <h2 id="dark-spriggan" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Dark Spriggan 🌑</h2>
@@ -112,8 +106,6 @@ export default function MutationArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>Every 22:04, spreads its roots and nearest 130.10 fruit within 30.30 studs have a 15.15% to get the Blight mutation!</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Exceptional for large gardens, targeting over a hundred fruits at once with a high-value mutation.</p>
 
             {/* 5. GIRAFFE */}
             <h2 id="giraffe" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Giraffe 🦒</h2>
@@ -123,8 +115,6 @@ export default function MutationArticlePage() {
                 <li>Every 14:43, the Giraffe eats fruits at least 10 studs high, selling them for 1.55x value.</li>
                 <li>The plant gets +67:00m growth, and all remaining fruits on that plant gain Arid.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Great for tall fruit farms and boosting early growth.</p>
 
             {/* 6. GRIFFIN */}
             <h2 id="griffin" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">6. Griffin 🦅</h2>
@@ -134,8 +124,6 @@ export default function MutationArticlePage() {
                 <li>Every 15:32, the Griffin creates a cyclone. Pets hit get 66.00s cooldown reduction.</li>
                 <li>Fruits hit have a 10.15% chance to receive Cyclonic (x50 multiplier).</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Supports your entire pet team while spreading strong mutations.</p>
 
             {/* 7. KAPPA */}
             <h2 id="kappa" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">7. Kappa 💧</h2>
@@ -145,8 +133,6 @@ export default function MutationArticlePage() {
                 <li>Every 8:30, the Kappa sprays water on all fruits within 20.25 studs, applying Wet.</li>
                 <li>There is also a 10.10% chance for existing Wet mutations to be upgraded to Bloodlit (x5 multiplier).</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Consistent AoE mutation spreading with a chance for a big multiplier upgrade.</p>
 
             {/* 8. LION */}
             <h2 id="lion" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">8. Lion 🦁</h2>
@@ -156,8 +142,6 @@ export default function MutationArticlePage() {
                 <li>Every 13:35, it roars and shares 404.00s cooldown reduction among your pets (max 60.60s each).</li>
                 <li>Every 23:07, it mutates fruits equal to the number of Safari-type pets you own, applying a random Safari mutation.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>A strong team-support pet that also spreads Safari mutations over time.</p>
 
             {/* 9. PHOENIX */}
             <h2 id="phoenix" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">9. Phoenix 🔥</h2>
@@ -168,8 +152,6 @@ export default function MutationArticlePage() {
                 <li>Every 6:37, the Phoenix flies through 4.10 fruits, applying Flaming (x25).</li>
                 <li>Fruits passed also have a 20.20% chance to mutate.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Fast, active mutation spreader that also strengthens newly mutated pets.</p>
 
             {/* 10. SPRIGGAN */}
             <h2 id="spriggan" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">10. Spriggan 🌿</h2>
@@ -178,8 +160,6 @@ export default function MutationArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>Every 22:02, spreads its roots and all fruit within 30.30 have a 15.15% to get the Bloom Mutation.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Provides a reliable chance to apply the Bloom mutation to a wide area of your garden.</p>
 
             {/* 11. SUGAR GLIDER */}
             <h2 id="sugar-glider" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">11. Sugar Glider 🐿️</h2>
@@ -188,8 +168,6 @@ export default function MutationArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>Every 19:56, it glides between 3 fruits, copying one mutation from each fruit and applying it to the next.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Useful for linking or transferring specific mutations across targeted fruits.</p>
 
             {/* 12. T-REX */}
             <h2 id="t-rex" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">12. T-Rex 🦖</h2>
@@ -198,18 +176,14 @@ export default function MutationArticlePage() {
             <ul className="list-disc ml-6 space-y-1">
                 <li>Every 20:11, the T-Rex consumes a random mutation from your garden, then roars to spread that same mutation to 3.20 random fruits.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Once you get a valuable mutation, the T-Rex can rapidly clone it around the garden.</p>
 
             {/* 13. TRAPDOOR SPIDER */}
             <h2 id="trapdoor-spider" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">13. Trapdoor Spider 🕷️</h2>
             <ArticleImage src="/images/trapdoor-spider.jpg" alt="Trapdoor Spider eating fruit and spreading mutations" caption="Clears fruits while triggering mutations in a large radius." />
             <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
             <ul className="list-disc ml-6 space-y-1">
-                <li>Every 297.00s, eats a random fruit in your garden and all fruits within a 25.25 stud range has a 8.10% chance to mutate.</li>
+                <li>Every 297.00s, eats a random fruit in your garden and all fruits within a 25.25 stud range has a 8.10% chance to mutate with the Webbed Mutation.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>A unique way to cycle fruits while simultaneously rolling for mutations across a significant area.</p>
 
             {/* 14. WOLF */}
             <h2 id="wolf" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">14. Wolf 🐺</h2>
@@ -219,8 +193,6 @@ export default function MutationArticlePage() {
                 <li>Every 4:02, the Wolf howls. Fruits within 20.20 studs gain Moonlit (15.15% chance).</li>
                 <li>You transform into a Werewolf for 35.01s, gaining +40.55% speed and +80.55% jump height.</li>
             </ul>
-            <h3 className="text-xl font-semibold mt-4 mb-2">Why it’s good:</h3>
-            <p>Spreads mutations quickly and gives a fun mobility buff for moving around your garden.</p>
 
             <Separator className="my-10" />
 
