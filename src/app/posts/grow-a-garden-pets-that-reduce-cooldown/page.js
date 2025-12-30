@@ -1,338 +1,248 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import Script from 'next/script';
 
-const Card = ({ children, className }) => <div className={`bg-white rounded-lg border border-gray-100 overflow-hidden shadow-md ${className}`}>{children}</div>;
-const Badge = ({ children, variant = 'default', className }) => {
-  let colorClasses = 'bg-green-100 text-green-700';
-  if (variant === 'meta') colorClasses = 'bg-blue-100 text-blue-700';
-  if (variant === 'tip') colorClasses = 'bg-pink-100 text-pink-700';
-  return <span className={`inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium ${colorClasses} ${className}`}>{children}</span>;
+export const metadata = {
+  title: "Grow a Garden: Best Pets for Reducing Cooldowns Guide",
+  description: "Maximize your garden's speed with pets like Dilophosaurus, Lion, and Queen Bee. Learn the best cooldown reduction abilities in Grow a Garden.",
+  keywords: ["Grow a Garden", "cooldown reduction pets", "Roblox Garden Guide", "Lion pet ability", "Queen Bee refresh"],
+  alternates: {
+    canonical: 'https://www.growagardenplayer.com/posts/grow-a-garden-pets-that-reduce-cooldown',
+  },
+  openGraph: {
+    title: "Grow a Garden: Pets That Reduce Cooldown",
+    description: "The complete guide to speeding up your pet abilities in Grow a Garden.",
+    images: [{ url: '/images/cooldown-pets-header.jpg' }],
+    type: 'article',
+  },
 };
-const Separator = ({ className }) => <div className={`bg-gray-200 h-px ${className}`} />;
 
 const articleData = {
   slug: "grow-a-garden-pets-that-reduce-cooldown",
   title: "Grow a Garden Pets That Reduce Cooldown",
   description: "A list of pets that advance cooldown or shorten ability timer, including the Dilophosaurus, Lion, and Queen Bee, making your garden run faster.",
   datePublished: "2025-12-16T12:00:00Z",
-  dateModified: "2025-12-16T12:00:00Z",
   authorName: "Lenard Esplana Perilla",
-  image: "/images/cooldown-pets-header.jpg",
-  category: "Guides",
-};
-
-const formatDate = (dateString) => {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(dateString).toLocaleDateString('en-US', options);
-};
-
-export const metadata = {
-  title: articleData.title,
-  description: articleData.description,
-  keywords: ['grow a garden pets that reduce cooldown'],
-  openGraph: {
-    title: articleData.title,
-    description: articleData.description,
-    url: `https://www.growagardenplayer.com/posts/${articleData.slug}`,
-    type: 'article',
-    publishedTime: articleData.datePublished,
-    modifiedTime: articleData.dateModified,
-    images: [{ url: articleData.image }],
-  },
+  category: "Pets",
+  readingTime: "7 min read"
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: articleData.title,
-  description: articleData.description,
-  image: `https://www.growagardenplayer.com${articleData.image}`,
-  datePublished: articleData.datePublished,
-  dateModified: articleData.dateModified,
-  author: {
-    '@type': 'Person',
-    name: articleData.authorName,
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Grow a Garden Player',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://www.growagardenplayer.com/logo.png',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': `https://www.growagardenplayer.com/posts/${articleData.slug}`,
-  },
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": articleData.title,
+  "description": articleData.description,
+  "author": { "@type": "Person", "name": articleData.authorName },
+  "datePublished": articleData.datePublished,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grow a Garden Player",
+    "logo": { "@type": "ImageObject", "url": "https://www.growagardenplayer.com/logo.png" }
+  }
+};
+
+const Badge = ({ children, variant = 'default', className }) => {
+  let colorClasses = 'bg-green-100 text-green-700';
+  if (variant === 'guides') colorClasses = 'bg-blue-100 text-blue-700';
+  return <span className={`inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold ${colorClasses} ${className}`}>{children}</span>;
 };
 
 const ArticleImage = ({ src, alt, caption }) => (
-  <figure className="my-8 max-w-xs mx-auto rounded-2xl overflow-hidden border border-gray-200 bg-gray-50">
-    <div className="w-full flex justify-center bg-gray-100">
-      <img 
-        src={src} 
-        alt={alt} 
-        className="w-full h-auto object-contain block"
-        loading="lazy"
-      />
+  <figure className="my-8 max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+    <div className="relative w-full aspect-video bg-gray-100">
+      <Image src={src} alt={alt} fill className="object-contain" sizes="(max-width: 768px) 100vw, 50vw" />
     </div>
     {caption && (
-      <figcaption className="p-2.5 text-center text-[11px] font-semibold text-gray-400 bg-white italic border-t border-gray-100">
+      <figcaption className="p-3 text-center text-xs font-semibold text-gray-500 italic bg-white border-t border-gray-100">
         {caption}
       </figcaption>
     )}
   </figure>
 );
 
-export default function CooldownArticlePage() {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+const TableOfContents = ({ pets }) => (
+  <nav className="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-10" aria-label="Table of Contents">
+    <h2 className="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">📋 Quick Navigation</h2>
+    <ol className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+      {pets.map((pet, index) => (
+        <li key={pet.id}><a href={`#${pet.id}`} className="text-blue-700 hover:underline font-medium">{index + 1}. {pet.name}</a></li>
+      ))}
+    </ol>
+  </nav>
+);
 
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+export default function CooldownArticlePage() {
+  const pets = [
+    { id: "dilophosaurus", name: "Dilophosaurus 🦖" },
+    { id: "griffin", name: "Griffin 🦅" },
+    { id: "hotdog-dachshund", name: "Hotdog Dachshund 🌭" },
+    { id: "lion", name: "Lion 🦁" },
+    { id: "meerkat", name: "Meerkat 🐒" },
+    { id: "oxpecker", name: "Oxpecker 🐦" },
+    { id: "peach-wasp", name: "Peach Wasp 🍑🐝" },
+    { id: "peacock", name: "Peacock 🦚" },
+    { id: "queen-bee", name: "Queen Bee 👑🐝" },
+    { id: "red-squirrel", name: "Red Squirrel 🐿️" },
+    { id: "spider", name: "Spider 🕷️" },
+    { id: "tarantula-hawk", name: "Tarantula Hawk 🕸️" },
+    { id: "wasp", name: "Wasp 🐝" }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900 selection:bg-blue-100">
+      <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#7CBA5A] rounded-full flex items-center justify-center text-xl" aria-hidden="true">
-              🌱
-            </div>
-            <p className="text-xl font-extrabold text-[#2B5E3A]">
-              Grow a Garden Player
-            </p>
+            <div className="w-8 h-8 bg-[#7CBA5A] rounded-full flex items-center justify-center text-xl">🌱</div>
+            <p className="text-xl font-extrabold text-[#2B5E3A]">Grow a Garden Player</p>
           </Link>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        
-        <section className="mb-8">
-            <Badge variant="guides" className="mb-3">{articleData.category}</Badge>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#2B5E3A] mb-4 tracking-tight">
-                {articleData.title}
-            </h1>
-            <p className="text-lg text-gray-600 mb-6">{articleData.description}</p>
-            <div className="text-sm text-gray-500">
-                Published on <time dateTime={articleData.datePublished}>{formatDate(articleData.datePublished)}</time>
-                {' '}by {articleData.authorName}
-            </div>
-        </section>
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <nav className="flex items-center space-x-2 text-sm text-gray-500 mb-6">
+          <Link href="/" className="hover:text-[#2B5E3A]">Home</Link>
+          <span>/</span>
+          <Link href="/category/guides" className="hover:text-[#2B5E3A]">Guides</Link>
+          <span>/</span>
+          <span className="text-gray-900 font-medium">Cooldown Pets</span>
+        </nav>
 
-        <article className="prose max-w-none text-gray-800">
-            
-            <p className="lead text-xl">
-                Cooldown-reduction pets are vital for efficiency. They help your entire pet team activate abilities more often, making your garden run much faster and maximizing your yield or experience gains.
-            </p>
+        <header className="mb-10">
+          <Badge variant="guides" className="mb-4">{articleData.category}</Badge>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#2B5E3A] mb-6 tracking-tight leading-tight">{articleData.title}</h1>
+          <div className="flex items-center gap-4 text-sm text-gray-500 italic">
+            <span>By {articleData.authorName}</span>
+            <span>•</span>
+            <time dateTime={articleData.datePublished}>December 16, 2025</time>
+          </div>
+        </header>
 
-            <Separator className="my-10" />
+        <TableOfContents pets={pets} />
 
-            <h2 id="dilophosaurus" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">1. Dilophosaurus 🦖</h2>
-            
-            <ArticleImage 
-                src="/images/dilophosaurus.jpg" 
-                alt="The Dilophosaurus pet spitting venom at nearby pets to advance their ability cooldowns." 
-                caption="Reliable, frequent cooldown advancement with bonus XP potential."
-            />
-            
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 13:57, it opens its frills and spits venom.</li>
-                <li>The venom spreads to 3.20 pets, either:
-                    <ul className="list-circle ml-6 space-y-1 mt-1">
-                        <li>advancing their cooldowns by 40.25s, or</li>
-                        <li>granting 540.00 XP.</li>
-                    </ul>
-                </li>
-            </ul>
+        <article className="prose prose-lg prose-green max-w-none">
+          <p className="lead text-xl text-gray-600">
+            Cooldown-reduction pets are vital for efficiency. They help your entire pet team activate abilities more often, making your garden run much faster and maximizing your yield or experience gains.
+          </p>
 
-            <h2 id="griffin" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">2. Griffin 🦅</h2>
+          <hr className="my-10" />
 
-            <ArticleImage 
-                src="/images/griffin.jpg" 
-                alt="The Griffin pet creating a cyclone that hits multiple pets to reduce their cooldown timers." 
-                caption="Hybrid support pet that boosts cooldowns and spreads a strong mutation."
-            />
+          {/* 1. DILOPHOSAURUS */}
+          <section id="dilophosaurus">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">1. Dilophosaurus 🦖</h2>
+            <ArticleImage src="/images/dilophosaurus.jpg" alt="Dilophosaurus pet spitting venom" caption="Reliable, frequent cooldown advancement with bonus XP potential." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 13:57, it opens its frills and spits venom. The venom spreads to 3.20 pets, either advancing their cooldowns by 40.25s, or granting 540.00 XP.</p>
+          </section>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 15:32, the Griffin creates a cyclone that:
-                    <ul className="list-circle ml-6 space-y-1 mt-1">
-                        <li>Advances cooldowns of pets hit by 66.00s</li>
-                        <li>Gives fruits a 10.15% chance to gain Cyclonic</li>
-                    </ul>
-                </li>
-            </ul>
+          {/* 2. GRIFFIN */}
+          <section id="griffin">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">2. Griffin 🦅</h2>
+            <ArticleImage src="/images/griffin.jpg" alt="Griffin pet creating a cyclone" caption="Hybrid support pet that boosts cooldowns and spreads a strong mutation." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 15:32, the Griffin creates a cyclone that advances cooldowns of pets hit by 66.00s and gives fruits a 10.15% chance to gain Cyclonic.</p>
+          </section>
 
-            <h2 id="hotdog-dachshund" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Hotdog Dachshund 🌭</h2>
+          {/* 3. HOTDOG DACHSHUND */}
+          <section id="hotdog-dachshund">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">3. Hotdog Dachshund 🌭</h2>
+            <ArticleImage src="/images/hotdog-dachshund.jpg" alt="Hotdog Dachshund pet leaving mustard puddle" caption="Fastest cooldown-supporting pet with area-based buffs." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 3:59, drops either a mustard or ketchup puddle. Mustard makes pet cooldowns tick 0.11x faster, while Ketchup grants 21.00% more XP.</p>
+          </section>
 
-            <ArticleImage 
-                src="/images/hotdog-daschund.jpg" 
-                alt="The Hotdog Dachshund pet leaving a mustard puddle on the ground to speed up nearby pet cooldowns." 
-                caption="Fastest cooldown-supporting pet with area-based buffs."
-            />
+          {/* 4. LION */}
+          <section id="lion">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">4. Lion 🦁</h2>
+            <ArticleImage src="/images/lion.jpg" alt="Lion pet roaring" caption="Strong burst of cooldown reduction shared across your entire pet team." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 13:35, the Lion roars and pulls all pets toward it, distributing 404.00s of cooldown advancement (max 60.60s each).</p>
+          </section>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 3:59, drops either a mustard or ketchup puddle (8.08 studs wide) lasting 30.15s:
-                    <ul className="list-circle ml-6 space-y-1 mt-1">
-                        <li>Mustard: pets inside have cooldowns tick 0.11x faster</li>
-                        <li>Ketchup: pets inside gain 21.00% more XP</li>
-                    </ul>
-                </li>
-            </ul>
-            
-            <h2 id="lion" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Lion 🦁</h2>
+          {/* 5. MEERKAT */}
+          <section id="meerkat">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">5. Meerkat 🐒</h2>
+            <ArticleImage src="/images/meerkat.jpg" alt="Meerkat pet performing a lookout action" caption="Can chain multiple cooldown boosts if the repeat chance triggers." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 7:20, it approaches another pet and performs a lookout, advancing that pet’s cooldown by 20.50s with a 15.25% chance to repeat.</p>
+          </section>
 
-            <ArticleImage 
-                src="/images/lion.jpg" 
-                alt="The Lion pet roaring to pull all pets toward it and distribute a large burst of cooldown reduction." 
-                caption="Strong burst of cooldown reduction shared across your entire pet team."
-            />
+          {/* 6. OXPECKER */}
+          <section id="oxpecker">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">6. Oxpecker 🐦</h2>
+            <ArticleImage src="/images/oxpecker.jpg" alt="Oxpecker pet sitting on a Safari pet" caption="A must-have in Safari-heavy teams to make all their abilities cycle faster." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>After any Safari pet uses its ability, its cooldown begins 14.40s shorter.</p>
+          </section>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 13:35, the Lion roars and pulls all pets toward it, distributing 404.00s of cooldown advancement (max 60.60s each).</li>
-            </ul>
-            
-            <h2 id="meerkat" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">5. Meerkat 🐒</h2>
+          {/* 7. PEACH WASP */}
+          <section id="peach-wasp">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">7. Peach Wasp 🍑🐝</h2>
+            <ArticleImage src="/images/peach-wasp.jpg" alt="Peach Wasp pet stinging a pet" caption="Steady cooldown boosts plus the Plasma mutation for extra value." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 24:54, applies Plasma to a fruit. Every 9:57, stings a random pet, advancing its cooldown by 60.60s.</p>
+          </section>
 
-            <ArticleImage 
-                src="/images/meerkat.jpg" 
-                alt="The Meerkat pet performing a lookout action, advancing a single pet's ability cooldown by a set amount." 
-                caption="Can chain multiple cooldown boosts if the repeat chance triggers."
-            />
+          {/* 8. PEACOCK */}
+          <section id="peacock">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">8. Peacock 🦚</h2>
+            <ArticleImage src="/images/peacock.jpg" alt="Peacock pet fanning its feathers" caption="One of the best AoE cooldown boosters for large gardens." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 10:00, fans its feathers and advances the cooldowns of all active pets within 20.20 studs by 65.60s.</p>
+          </section>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 7:20, it approaches another pet and performs a lookout, advancing that pet’s cooldown by 20.50s.</li>
-                <li>There is also a 15.25% chance to immediately repeat the action.</li>
-            </ul>
+          {/* 9. QUEEN BEE */}
+          <section id="queen-bee">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">9. Queen Bee 👑🐝</h2>
+            <ArticleImage src="/images/queen-bee.jpg" alt="Queen Bee refreshing the pet with highest cooldown" caption="Its ability refresh is extremely strong for top-tier cooldown-intensive pets." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 20:04, a fruit becomes Pollinated. Every 21:51, the pet with the highest cooldown gets its ability fully refreshed.</p>
+          </section>
 
-            <h2 id="oxpecker" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">6. Oxpecker 🐦</h2>
+          {/* 10. RED SQUIRREL */}
+          <section id="red-squirrel">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">10. Red Squirrel 🐿️</h2>
+            <ArticleImage src="/images/red-squirrel.jpg" alt="Red Squirrel pet watching a Fall-type pet" caption="Pairs perfectly with Fall pets to speed up their cycles." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>After any Fall-type pet finishes its ability, its cooldown starts 14.40s shorter.</p>
+          </section>
 
-            <ArticleImage 
-                src="/images/oxpecker.jpg" 
-                alt="The Oxpecker pet sitting on a Safari pet, reducing the cooldown of that pet after it uses its ability." 
-                caption="A must-have in Safari-heavy teams to make all their abilities cycle faster."
-            />
+          {/* 11. SPIDER */}
+          <section id="spider">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">11. Spider 🕷️</h2>
+            <ArticleImage src="/images/spider.jpg" alt="Spider pet weaving a web" caption="A powerful area buff that helps both pets and plants simultaneously." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 8:03, weaves a web. Pets on the web advance cooldowns by 1.01s every second, while plants grow 15.15s faster per second.</p>
+          </section>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>After any Safari pet uses its ability, its cooldown begins 14.40s shorter.</li>
-            </ul>
-            
-            <h2 id="peach-wasp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">7. Peach Wasp 🍑🐝</h2>
+          {/* 12. TARANTULA HAWK */}
+          <section id="tarantula-hawk">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">12. Tarantula Hawk 🕸️</h2>
+            <ArticleImage src="/images/tarantula-hawk.jpg" alt="Tarantula Hawk stinging a pet" caption="Very frequent cooldown boosts plus a strong mutation bonus." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 24:54, pollinates a fruit. Every 4:59, stings a pet and advances its cooldown by 80.80s.</p>
+          </section>
 
-            <ArticleImage 
-                src="/images/peach-wasp.jpg" 
-                alt="The Peach Wasp pet stinging a pet to advance its cooldown and applying Plasma to a fruit." 
-                caption="Steady cooldown boosts plus the Plasma mutation for extra value."
-            />
+          {/* 13. WASP */}
+          <section id="wasp">
+            <h2 className="text-3xl font-bold text-[#2B5E3A] mt-12 mb-4">13. Wasp 🐝</h2>
+            <ArticleImage src="/images/wasp.jpg" alt="Wasp pet stinging a pet" caption="A solid utility pet with reliable cooldown advancement." />
+            <p className="font-bold text-[#2B5E3A] mb-2 uppercase text-sm tracking-wide">Ability:</p>
+            <p>Every 29:42, pollinates a nearby fruit. Every 9:54, stings a pet, advancing its cooldown by 60.60s.</p>
+          </section>
 
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 24:54, flies to a fruit and applies Plasma.</li>
-                <li>Every 9:57, stings a random pet, advancing its cooldown by 60.60s.</li>
-            </ul>
-
-            <h2 id="peacock" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">8. Peacock 🦚</h2>
-
-            <ArticleImage 
-                src="/images/peacock.jpg" 
-                alt="The Peacock pet fanning its feathers to send out a large wave that reduces the cooldowns of all active pets." 
-                caption="One of the best AoE cooldown boosters for large gardens."
-            />
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 10:00, fans its feathers and advances the cooldowns of all active pets within 20.20 studs by 65.60s.</li>
-            </ul>
-
-            <h2 id="queen-bee" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">9. Queen Bee 👑🐝</h2>
-
-            <ArticleImage 
-                src="/images/queen-bee.jpg" 
-                alt="The Queen Bee pet flying near a pet with a long cooldown and fully refreshing its ability." 
-                caption="Its ability refresh is extremely strong for top-tier cooldown-intensive pets."
-            />
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 20:04, a nearby fruit becomes Pollinated.</li>
-                <li>Every 21:51, the pet with the highest cooldown gets its ability fully refreshed.</li>
-            </ul>
-
-            <h2 id="red-squirrel" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">10. Red Squirrel 🐿️</h2>
-
-            <ArticleImage 
-                src="/images/red-squirrel.jpg" 
-                alt="The Red Squirrel pet watching a Fall-type pet, reducing the cooldown of that pet after it uses its ability." 
-                caption="Pairs perfectly with Fall pets to speed up their cycles."
-            />
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>After any Fall-type pet finishes its ability, its cooldown starts 14.40s shorter.</li>
-            </ul>
-
-            <h2 id="spider" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">11. Spider 🕷️</h2>
-
-            <ArticleImage 
-                src="/images/spider.jpg" 
-                alt="The Spider pet weaving a web that speeds up both pet cooldowns and plant growth simultaneously." 
-                caption="A powerful area buff that helps both pets and plants simultaneously."
-            />
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 8:03, weaves a web (18.18 studs) lasting 10.10s.
-                    <ul className="list-circle ml-6 space-y-1 mt-1">
-                        <li>Pets on the web advance cooldowns by 1.01s every second</li>
-                        <li>Plants in the area grow 15.15s faster every second</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <h2 id="tarantula-hawk" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">12. Tarantula Hawk 🕸️</h2>
-
-            <ArticleImage 
-                src="/images/tarantula-hawk.jpg" 
-                alt="The Tarantula Hawk pet stinging a pet and advancing its cooldown by a large amount." 
-                caption="Very frequent cooldown boosts plus a strong mutation bonus."
-            />
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 24:54, applies Pollinated to a nearby fruit.</li>
-                <li>Every 4:59, stings a pet and advances its cooldown by 80.80s.</li>
-            </ul>
-
-            <h2 id="wasp" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">13. Wasp 🐝</h2>
-
-            <ArticleImage 
-                src="/images/wasp.jpg" 
-                alt="The Wasp pet stinging a pet to reduce its cooldown and pollinating a nearby fruit." 
-                caption="A solid utility pet with reliable cooldown advancement."
-            />
-
-            <h3 className="text-xl font-semibold mt-4 mb-2">Ability:</h3>
-            <ul className="list-disc ml-6 space-y-1">
-                <li>Every 29:42, pollinates a nearby fruit.</li>
-                <li>Every 9:54, stings a pet, advancing its cooldown by 60.60s.</li>
-            </ul>
-            
-            <Separator className="my-10" />
-
-            <h2 id="final-thoughts" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">Final Thoughts</h2>
-            <p>
-                For maximum garden speed, a layered approach is best. Use pets like the Peacock for large AoE buffs, supplement with single-target chainers like the Meerkat, and include specialty pets like the Oxpecker to support your faction pets. A fast pet cycle means faster profits!
-            </p>
+          <hr className="my-12" />
+          <h2 id="final-thoughts" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">Final Thoughts</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            For maximum garden speed, a layered approach is best. Use pets like the <strong>Peacock</strong> for large AoE buffs, supplement with single-target chainers like the <strong>Meerkat</strong>, and include specialty pets like the <strong>Oxpecker</strong> to support your faction pets. A fast pet cycle means faster profits!
+          </p>
         </article>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 mt-20 p-8 text-center text-sm text-gray-500">
-        <p>Return to <Link href="/" className="text-[#2B5E3A] hover:underline">Grow a Garden Player</Link></p>
+      <footer className="bg-white border-t border-gray-200 mt-20 p-12 text-center text-sm text-gray-500">
+        <p>© 2025 Grow a Garden Player. All rights reserved.</p>
+        <Link href="/" className="text-[#2B5E3A] font-bold hover:underline block mt-2">Return Home</Link>
       </footer>
     </div>
   );
