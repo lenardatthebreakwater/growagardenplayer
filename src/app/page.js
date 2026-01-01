@@ -6,7 +6,7 @@ import FuzzySearch from '@/app/components/FuzzySearch';
 import allPosts from '@/app/data/posts.js';
 
 export const metadata = {
-  title: 'Grow a Garden Player | Guides, Tips & News for Grow a Garden Players',
+  title: 'Grow a Garden Player',
   description: 'Your ultimate resource for Grow a Garden guides, tips, and the latest news for all Roblox players. Get expert strategies to cultivate your best farm!',
   keywords: ['Grow a Garden', 'Roblox', 'Guide', 'Tips', 'News', 'Gardening Game'],
   metadataBase: new URL('https://www.growagardenplayer.com'),
