@@ -20,7 +20,7 @@ export const metadata = {
     siteName: 'Grow a Garden Player',
     images: [
       {
-        url: 'https://www.growagardenplayer.com/homepage-banner.jpg',
+        url: 'https://www.growagardenplayer.com/images/homepage-banner.jpg',
         width: 1200,
         height: 630,
         alt: 'Grow a Garden Player Logo and banner',
