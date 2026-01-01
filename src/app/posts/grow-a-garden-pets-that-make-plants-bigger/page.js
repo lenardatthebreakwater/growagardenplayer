@@ -2,33 +2,32 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 
-// 1. SEO METADATA
 export const metadata = {
-  title: "Best Grow a Garden Pets That Make Plants Bigger",
-  description: "Find out the best Grow a Garden pets that make plants bigger.",
+  title: "Best Grow a Garden Pets That Make Plants Bigger | Expert Guide",
+  description: "Discover the top 5 Grow a Garden pets that make plants bigger. Includes Moon Cat, Toucan, Blood Hedgehog, Shroomie, and Black Cat with detailed stats and farming tips.",
   keywords: ['grow a garden pets that make plants bigger'],
+  metadataBase: new URL('https://www.growagardenplayer.com'),
   alternates: {
-    canonical: 'https://www.growagardenplayer.com/posts/grow-a-garden-pets-that-make-plants-bigger',
+    canonical: '/posts/grow-a-garden-pets-that-make-plants-bigger',
   },
   openGraph: {
     title: "Best Grow a Garden Pets That Make Plants Bigger",
-    description: "Find out the best Grow a Garden pets that make plants bigger.",
+    description: "Discover the top 5 Grow a Garden pets that make plants bigger. Includes Moon Cat, Toucan, Blood Hedgehog, Shroomie, and Black Cat with detailed stats and farming tips.",
     url: `https://www.growagardenplayer.com/posts/grow-a-garden-pets-that-make-plants-bigger`,
     type: 'article',
-    images: [{ url: '/images/plant-size-pets-header.jpg' }],
+    images: [{ url: '/images/plant-size-pets-banner.jpg' }],
   },
 };
 
 const articleData = {
   slug: "grow-a-garden-pets-that-make-plants-bigger",
   title: "Best Grow a Garden Pets That Make Plants Bigger",
-  description: "Find out the best Grow a Garden pets that make plants bigger.",
+  description: "Discover the top 5 Grow a Garden pets that make plants bigger. Includes Moon Cat, Toucan, Blood Hedgehog, Shroomie, and Black Cat with detailed stats and farming tips.",
   datePublished: "2025-12-10T09:00:00Z",
   authorName: "Lenard Esplana Perilla",
   category: "Pets",
 };
 
-// 2. STRUCTURED DATA (JSON-LD)
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -43,9 +42,37 @@ const jsonLd = {
   }
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.growagardenplayer.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pets",
+      "item": "https://www.growagardenplayer.com/category/pets"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Best Grow a Garden Pets That Make Plants Bigger",
+      "item": "https://www.growagardenplayer.com/posts/grow-a-garden-pets-that-make-plants-bigger"
+    }
+  ]
+};
+
 const Badge = ({ children, variant = 'default', className }) => {
   let colorClasses = 'bg-gray-100 text-gray-700';
   if (variant === 'guides' || variant === 'Guides') colorClasses = 'bg-green-100 text-green-700';
+  if (variant === 'pets' || variant === 'Pets') colorClasses = 'bg-blue-100 text-blue-700';
+  if (variant === 'plants' || variant === 'Plants') colorClasses = 'bg-purple-100 text-purple-700';
+  if (variant === 'others' || variant === 'Others') colorClasses = 'bg-orange-100 text-orange-700';
   return <span className={`inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium ${colorClasses} ${className}`}>{children}</span>;
 };
 
@@ -70,7 +97,28 @@ const ArticleImage = ({ src, alt, caption }) => (
   </figure>
 );
 
-// TABLE OF CONTENTS COMPONENT
+const Breadcrumb = () => (
+  <nav aria-label="Breadcrumb" className="mb-6">
+    <ol className="flex items-center gap-2 text-sm text-gray-600">
+      <li>
+        <Link href="/" className="hover:text-[#2B5E3A] transition-colors">
+          Home
+        </Link>
+      </li>
+      <li aria-hidden="true" className="text-gray-400">/</li>
+      <li>
+        <Link href="/category/pets" className="hover:text-[#2B5E3A] transition-colors">
+          Pets
+        </Link>
+      </li>
+      <li aria-hidden="true" className="text-gray-400">/</li>
+      <li className="text-gray-900 font-medium" aria-current="page">
+        Best Grow a Garden Pets That Make Plants Bigger
+      </li>
+    </ol>
+  </nav>
+);
+
 const TableOfContents = ({ pets }) => (
   <nav className="bg-green-50 border border-green-100 rounded-xl p-6 mb-10" aria-label="Table of Contents">
     <h2 className="text-xl font-bold text-[#2B5E3A] mb-4 flex items-center gap-2">📋 Plant Size Pet Navigation</h2>
@@ -103,6 +151,7 @@ export default function PlantSizeArticlePage() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 selection:bg-yellow-100">
       <Script id="json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Script id="breadcrumb-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
@@ -115,8 +164,10 @@ export default function PlantSizeArticlePage() {
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         
+        <Breadcrumb />
+        
         <section className="mb-8">
-          <Badge variant="guides" className="mb-3">{articleData.category}</Badge>
+          <Badge variant="pets" className="mb-3">{articleData.category}</Badge>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-[#2B5E3A] mb-4 tracking-tight">
             {articleData.title}
           </h1>
@@ -145,12 +196,12 @@ export default function PlantSizeArticlePage() {
           
           <ArticleImage 
             src="/images/moon-cat.jpg" 
-            alt="The Moon Cat pet from Grow a Garden, known for its ability to grant a 1.53x size bonus to new fruit while it naps." 
+            alt="Moon Cat pet - Grow a Garden Roblox" 
             caption="The classic pet for growing massive fruits, especially Night Type plants."
           />
           
           <p>
-            The Moon Cat is an OG meta pet for growing massive fruits back in the early days of Grow a Garden. It’s beloved by many players not just because of its powerful ability, but also for its adorable appearance.
+            The Moon Cat is an OG meta pet for growing massive fruits back in the early days of Grow a Garden. It's beloved by many players not just because of its powerful ability, but also for its adorable appearance.
           </p>
 
           <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
@@ -171,12 +222,12 @@ export default function PlantSizeArticlePage() {
 
           <ArticleImage 
             src="/images/toucan.jpg" 
-            alt="The Toucan pet in Grow a Garden, known for boosting the size and variant chance of tropical plants like bananas and watermelons." 
+            alt="Toucan pet - Grow a Garden Roblox" 
             caption="Perfect for tropical fruit farms."
           />
 
           <p>
-            The Toucan is a great pet for players who love growing tropical fruits in Grow a Garden. It’s simple to use and provides a consistent size and variant boost to nearby plants.
+            The Toucan is a great pet for players who love growing tropical fruits in Grow a Garden. It's simple to use and provides a consistent size and variant boost to nearby plants.
           </p>
 
           <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
@@ -189,19 +240,19 @@ export default function PlantSizeArticlePage() {
             This means that tropical fruits near a Toucan can grow larger and have a higher chance of becoming gold or rainbow variants. Some examples of these fruits include Banana, Coconut, Dragon Fruit, Mango, Papaya, Starfruit, and Watermelon.
           </p>
           <p className="mt-4">
-            Back then, the Toucan played a major role in the famous Honeysuckle Method. Before an update changed the plant’s type, Honeysuckle was considered tropical. Players used eight Toucans together with a sprinkler glitch to grow massive honeysuckle fruits worth trillions. The developers later patched the glitch and removed Honeysuckle from the tropical category. Even so, the Toucan remains a useful pet for growing tropical fruits that are both bigger and more likely to turn gold or rainbow.
+            Back then, the Toucan played a major role in the famous Honeysuckle Method. Before an update changed the plant's type, Honeysuckle was considered tropical. Players used eight Toucans together with a sprinkler glitch to grow massive honeysuckle fruits worth trillions. The developers later patched the glitch and removed Honeysuckle from the tropical category. Even so, the Toucan remains a useful pet for growing tropical fruits that are both bigger and more likely to turn gold or rainbow.
           </p>
 
           <h2 id="blood-hedgehog" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">3. Blood Hedgehog 🩸🦔</h2>
 
           <ArticleImage 
-            src="/images/blood-hedgehog.jpg" 
-            alt="The Blood Hedgehog pet, which boosts the size and variant chance of prickly plants such as cacti and aloe vera." 
+            src="/images/blood-hedgehog.jpg"
+            alt="Blood Hedgehog pet - Grow a Garden Roblox" 
             caption="A great pet for players focusing on prickly plant varieties."
           />
 
           <p>
-            The Blood Hedgehog is a fun choice for players who enjoy growing prickly plants in Grow a Garden. While it’s not considered a meta pet, it offers impressive boosts that make your spiky garden more powerful.
+            The Blood Hedgehog is a fun choice for players who enjoy growing prickly plants in Grow a Garden. While it's not considered a meta pet, it offers impressive boosts that make your spiky garden more powerful.
           </p>
 
           <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
@@ -211,19 +262,19 @@ export default function PlantSizeArticlePage() {
           </ul>
 
           <p className="mt-4">
-            This means that all prickly plants near a Blood Hedgehog can grow much larger and have a higher chance of turning into gold or rainbow variants. Some examples of these plants include Aloe Vera, Blooming Cactus, Dragon Fruit, Horned Dinoshroom, Prickly Pear, and Venus Fly Trap. Even though the Blood Hedgehog isn’t a top meta pet, it’s a lot of fun to use because of the sheer number of interesting prickly plants in the game, two of which are of transcendent rarity and many are of prismatic rarity.
+            This means that all prickly plants near a Blood Hedgehog can grow much larger and have a higher chance of turning into gold or rainbow variants. Some examples of these plants include Aloe Vera, Blooming Cactus, Dragon Fruit, Horned Dinoshroom, Prickly Pear, and Venus Fly Trap. Even though the Blood Hedgehog isn't a top meta pet, it's a lot of fun to use because of the sheer number of interesting prickly plants in the game, two of which are of transcendent rarity and many are of prismatic rarity.
           </p>
           
           <h2 id="shroomie" className="text-3xl font-bold text-[#2B5E3A] mt-10 mb-6">4. Shroomie 🍄</h2>
 
           <ArticleImage 
             src="/images/shroomie.jpg" 
-            alt="The Shroomie pet from Grow a Garden, which boosts plant size based on the total number of Fungus-type plants in the garden." 
+            alt="Shroomie pet - Grow a Garden Roblox" 
             caption="Shroomie requires a large quantity of fungus plants to maximize its effect."
           />
 
           <p>
-            If you’ve got a stash of fungus type seeds, Shroomie is the perfect pet to put them to good use. Its ability increases the size of all nearby fruits and crops based on how many Fungus-type plants you have, with the Mushroom being the most common to use. Other Fungus plants that contribute to Shroomie’s effect include Autumn Shroom, Bloodred Mushroom, Duskpuff and many others.
+            If you've got a stash of fungus type seeds, Shroomie is the perfect pet to put them to good use. Its ability increases the size of all nearby fruits and crops based on how many Fungus-type plants you have, with the Mushroom being the most common to use. Other Fungus plants that contribute to Shroomie's effect include Autumn Shroom, Bloodred Mushroom, Duskpuff and many others.
           </p>
 
           <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
@@ -236,22 +287,22 @@ export default function PlantSizeArticlePage() {
 
           <ArticleImage 
             src="/images/black-cat.jpg" 
-            alt="The Black Cat pet resting near a Witch's Cauldron cosmetic, boosting nearby fruit size during its predictable nap cycle." 
+            alt="Black Cat pet - Grow a Garden Roblox" 
             caption="A reliable, stacking alternative to the Moon Cat."
           />
 
           <p>
-            The Black Cat is a more consistent alternative to the Moon Cat. Instead of napping randomly, Black Cats always sleep near a Witch’s Cauldron cosmetic, making it easy to stack their size bonus. With just one cauldron, you can have up to 8 Black Cats napping together, all boosting nearby fruits at the same time.
+            The Black Cat is a more consistent alternative to the Moon Cat. Instead of napping randomly, Black Cats always sleep near a Witch's Cauldron cosmetic, making it easy to stack their size bonus. With just one cauldron, you can have up to 8 Black Cats napping together, all boosting nearby fruits at the same time.
           </p>
 
           <h3 className="text-xl font-semibold mt-4 mb-2">Ability (1kg at age 1):</h3>
           <ul className="list-disc ml-6 space-y-1">
-            <li>Every 4:02 minutes, the Black Cat goes to a Witch’s Cauldron and naps for 14.65 seconds.</li>
+            <li>Every 4:02 minutes, the Black Cat goes to a Witch's Cauldron and naps for 14.65 seconds.</li>
             <li>Any new fruit within 10.10 studs during this time will be 1.10x larger.</li>
           </ul>
 
           <p className="mt-4">
-            Although its cooldown is longer than the Moon Cat’s, the Black Cat’s consistent positioning makes it a reliable choice. The only limitation is that it requires the Witch’s Cauldron cosmetic for its ability to work.
+            Although its cooldown is longer than the Moon Cat's, the Black Cat's consistent positioning makes it a reliable choice. The only limitation is that it requires the Witch's Cauldron cosmetic for its ability to work.
           </p>
 
           <Separator className="my-10" />

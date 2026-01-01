@@ -4,9 +4,13 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  siteName: 'Grow a Garden Player',
+  metadataBase: new URL('https://www.growagardenplayer.com'),
+  title: {
+    default: 'Grow a Garden Player',
+  },
+  description: 'Your ultimate resource for Grow a Garden guides, tips, and news.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.png',
   }
 };
 
